@@ -268,14 +268,14 @@
             <div class="contact-info">
                 <h3>☎ Phone</h3>
                 <p>
-                  7347064509 
+                    7347064509
                 </p>
             </div>
 
             <div class="contact-info">
                 <h3>📱 Mobile</h3>
                 <p>
-                   9915670214 
+                    9915670214
                 </p>
             </div>
 
@@ -291,30 +291,34 @@
         <div class="form-box">
             <h2>Send Us a Message</h2>
 
-            <form>
+            <form id="contactForm">
+
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" placeholder="Enter your name">
+                    <input type="text" name="name" placeholder="Enter your name" required>
                 </div>
 
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" placeholder="Enter your email">
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
                     <label>Subject</label>
-                    <input type="text" placeholder="Enter subject">
+                    <input type="text" name="subject" placeholder="Enter subject" required>
                 </div>
 
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea placeholder="Write your message"></textarea>
+                    <textarea name="message" placeholder="Write your message" required></textarea>
                 </div>
 
                 <button type="submit" class="btn">
                     Send Message
                 </button>
+
+                <p id="formStatus" style="margin-top:15px;"></p>
+
             </form>
         </div>
 
@@ -346,6 +350,45 @@
             All Rights Reserved.
         </p>
     </footer>
+
+
+    <!-- Google Sheet Connection -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const form = e.target;
+            const status = document.getElementById("formStatus");
+
+            const data = {
+                name: form.name.value,
+                email: form.email.value,
+                subject: form.subject.value,
+                message: form.message.value
+            };
+
+            status.textContent = "Sending...";
+
+            fetch("https://script.google.com/macros/s/AKfycbxsvVWJf9uvsFTVMP4IGrKNoKQWwPMgxe1_farOswDP7FKjHovG-sjqok5n0ER_qHy6Vg/exec", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+
+                status.textContent = "Message sent successfully!";
+                form.reset();
+
+            })
+            .catch(error => {
+
+                status.textContent = "Something went wrong. Please try again.";
+
+            });
+
+        });
+    </script>
 
 </body>
 </html>
