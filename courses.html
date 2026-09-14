@@ -1,0 +1,226 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: #0877b9;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #ff5722;
+            padding-bottom: 10px;
+        }
+
+        .courses {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+
+        .course-list {
+            list-style: none;
+        }
+
+        .course-list li {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            font-size: 17px;
+        }
+
+        .course-list li::before {
+            content: "📚";
+            margin-right: 12px;
+        }
+
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+        /* Navbar */
+nav {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+}
+/* Fee Structure */
+        .fee-box {
+            background: #eaf6ff;
+            padding: 25px;
+            border-left: 5px solid #0877b9;
+            margin-top: 20px;
+        }
+
+        .fee-box p {
+            font-size: 16px;
+        }
+
+/* College Logo / Name */
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0877b9;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+/* Links */
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #0877b9;
+}
+/* Footer */
+        footer {
+            background: #073b5c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+     <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            🎓 Shaheed Darshan Singh Pheruman Memorial College
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="sdspc.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Courses Offered
+        </h2>
+
+        <div class="courses">
+
+            <ul class="course-list">
+
+                <li>
+                    Bachelor of Computer Application (BCA) - Full Time
+                </li>
+
+                <li>
+                    Bachelor of Arts (B.A) - Full Time
+                </li>
+
+                <li>
+                    Bachelor of Commerce (B.Com) - Full Time
+                </li>
+
+                <li>
+                    Bachelor of Science (B.Sc) (Economics) - Full Time
+                </li>
+
+                <li>
+                    Diploma in Computer Application (DCA) - Full Time
+                </li>
+
+                <li>
+                    Master of Science (M.Sc) (Computer Science) - Full Time
+                </li>
+
+                <li>
+                    Post Graduate Diploma in Computer Applications (PGDCA) - Full Time
+                </li>
+                <li>Certificate in Computer Application (CCA)</li>
+
+    <li>Certificate Course in Cosmetology</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+     <!-- Fee Structure -->
+        <h2 class="section-title">
+            Fee Structure
+        </h2>
+
+        <div class="fee-box">
+            <p>
+                For detailed information regarding the fee structure,
+                students can contact the college administration.
+            </p>
+        </div>
+
+    </div>
+<!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women
+        </p>
+        <p>
+            Rayya, Amritsar, Punjab
+        </p>
+    </footer>
+
+</body>
+
+</html>

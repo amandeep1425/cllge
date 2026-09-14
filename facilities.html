@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Facilities</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title p {
+            color: #ff5722;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            color: #0877b9;
+            font-size: 30px;
+            margin-top: 8px;
+        }
+
+        /* Facilities Grid */
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .facility {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .facility:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .facility span {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .facility h3 {
+            color: #0877b9;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .facility p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+        }/* Navbar */
+nav {
+    background: #ffffff;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+}
+
+/* College Logo */
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0877b9;
+}
+
+/* Navigation Menu */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+/* Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    color: #0877b9;
+}
+/* Footer */
+        footer {
+            background: #073b5c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+        /* Tablet */
+
+        @media (min-width: 769px) and (max-width: 1000px) {
+
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+<!-- Navbar -->
+    <nav>
+        <div class="logo">
+            🎓 Shaheed Darshan Singh Pheruman Memorial College
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="sdspc.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+
+        <!-- Facilities Heading -->
+
+        <div class="section-title">
+
+            <p>FACILITIES</p>
+
+            <h2>What We Offer</h2>
+
+        </div>
+
+
+        <!-- Facilities -->
+
+        <div class="facility-grid">
+
+
+            <div class="facility">
+                <span>🏠</span>
+                <h3>Girls Hostel</h3>
+                <p>
+                    Well-furnished hostel facility with a comfortable
+                    and healthy environment for students.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🏥</span>
+                <h3>Medical Facility</h3>
+                <p>
+                    Sick room and basic first-aid support are available
+                    for students when required.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🏋️</span>
+                <h3>Gym</h3>
+                <p>
+                    Gym facility is available to encourage fitness
+                    and a healthy lifestyle among students.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>📚</span>
+                <h3>Library</h3>
+                <p>
+                    Spacious and computerized library with books,
+                    journals, magazines and learning resources.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🏀</span>
+                <h3>Sports</h3>
+                <p>
+                    Sports facilities encourage students to participate
+                    in physical activities and competitions.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>💻</span>
+                <h3>IT Infrastructure</h3>
+                <p>
+                    Modern IT infrastructure supports digital learning
+                    and practical academic activities.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🍴</span>
+                <h3>Cafeteria</h3>
+                <p>
+                    A cafeteria facility provides fresh and hygienic
+                    food for students and staff.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🎭</span>
+                <h3>Auditorium</h3>
+                <p>
+                    Auditorium facility is available for college events,
+                    seminars and cultural activities.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🚌</span>
+                <h3>Transport</h3>
+                <p>
+                    Bus transportation facility helps students travel
+                    conveniently from surrounding areas.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🔬</span>
+                <h3>Laboratories</h3>
+                <p>
+                    Department-based laboratories provide students
+                    with practical learning opportunities.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🛋️</span>
+                <h3>Guest & Waiting Room</h3>
+                <p>
+                    Guest and waiting facilities are available for
+                    visiting faculty and family members.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🌟</span>
+                <h3>Youth Welfare Club</h3>
+                <p>
+                    A platform for students to explore their talents
+                    through cultural and creative activities.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>📝</span>
+                <h3>Workshops & Seminars</h3>
+                <p>
+                    Workshops and seminars help students develop
+                    knowledge, skills and practical understanding.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🤝</span>
+                <h3>Alumni Association</h3>
+                <p>
+                    An alumni network helps maintain connections
+                    between former students and the college.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🏫</span>
+                <h3>Modern Classrooms</h3>
+                <p>
+                    Classrooms support comfortable learning with
+                    modern teaching and technology facilities.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>🎨</span>
+                <h3>Extra-Curricular Activities</h3>
+                <p>
+                    Students are encouraged to participate in activities
+                    that develop creativity and leadership.
+                </p>
+            </div>
+
+
+            <div class="facility">
+                <span>💼</span>
+                <h3>Training & Placement</h3>
+                <p>
+                    Training and placement support helps students
+                    prepare for careers and employment opportunities.
+                </p>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women
+        </p>
+        <p>
+            Rayya, Amritsar, Punjab
+        </p>
+    </footer>
+
+
+</body>
+
+</html>
