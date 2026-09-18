@@ -1,192 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - SDSPMC</title>
 
-<title>Faculty - SDSPM College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* NAVBAR */
+        .navbar {
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 6%;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-body {
-    font-family: Poppins, sans-serif;
-    background: #f5f7fb;
-    color: #263238;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-nav {
-    background: white;
-    min-height: 78px;
-    padding: 10px 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 3px 15px rgba(0,0,0,.08);
-}
+        .logo img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #123b5d;
-    font-weight: 700;
-    max-width: 470px;
-}
+        .logo-text {
+            color: #075985;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
 
-.logo img {
-    width: 48px;
-    height: 48px;
-}
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 22px;
-    list-style: none;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: #263238;
-    font-size: 14px;
-}
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #0877b9;
+        }
 
-.hero {
-    min-height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+        /* PAGE HEADER */
+        .page-header {
+            background: linear-gradient(135deg, #075985, #0891b2);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
 
-    background:
-        linear-gradient(rgba(9,59,92,.85),rgba(8,119,185,.82)),
-        url("gate.jpeg") center/cover;
-}
+        .page-header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
 
-.hero h1 {
-    font-size: 38px;
-}
+        .page-header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 60px auto;
-}
+        /* CONTENT */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 55px auto;
+        }
 
-.department {
-    margin-bottom: 45px;
-}
+        .intro {
+            text-align: center;
+            margin-bottom: 45px;
+        }
 
-.department h2 {
-    color: #123b5d;
-    border-left: 5px solid #0877b9;
-    padding-left: 12px;
-    margin-bottom: 20px;
-}
+        .intro h2 {
+            color: #075985;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
 
-.faculty-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
+        .intro p {
+            color: #666;
+            max-width: 750px;
+            margin: auto;
+        }
 
-.faculty-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 6px 22px rgba(0,0,0,.07);
-    text-align: center;
-}
+        /* PRINCIPAL */
+        .principal-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 45px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 5px solid #0877b9;
+        }
 
-.teacher-icon {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    margin: auto auto 15px;
-    background: #eaf6fc;
-    color: #0877b9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-}
+        .principal-card h3 {
+            color: #075985;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
 
-.faculty-card h3 {
-    color: #123b5d;
-    font-size: 16px;
-}
+        .principal-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #222;
+        }
 
-.faculty-card p {
-    color: #68757d;
-    font-size: 13px;
-    margin-top: 5px;
-}
+        .qualification {
+            color: #666;
+            margin-top: 5px;
+            font-size: 14px;
+        }
 
-.note {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 35px;
-    color: #68757d;
-    font-size: 13px;
-}
+        /* DEPARTMENT */
+        .department {
+            margin-bottom: 35px;
+        }
 
-footer {
-    background: #123b5d;
-    color: white;
-    text-align: center;
-    padding: 28px;
-    margin-top: 80px;
-    font-size: 13px;
-}
+        .department-title {
+            background: linear-gradient(135deg, #075985, #0891b2);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px 12px 0 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-@media(max-width:900px) {
+        .faculty-grid {
+            background: white;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
 
-    .faculty-grid {
-        grid-template-columns: repeat(2,1fr);
-    }
-}
+        .faculty-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            background: #ffffff;
+            transition: 0.3s;
+        }
 
-@media(max-width:650px) {
+        .faculty-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
 
-    nav {
-        flex-direction: column;
-        gap: 12px;
-    }
+        .faculty-number {
+            display: inline-flex;
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #e0f2fe;
+            color: #075985;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+        .faculty-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #075985;
+            margin-bottom: 5px;
+        }
 
-    .faculty-grid {
-        grid-template-columns: 1fr;
-    }
+        .faculty-qualification {
+            color: #666;
+            font-size: 14px;
+        }
 
-    .hero h1 {
-        font-size: 28px;
-    }
-}
+        /* ADMINISTRATIVE */
+        .admin-section {
+            margin-top: 45px;
+        }
 
-</style>
+        .admin-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .admin-item {
+            padding: 14px 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .admin-item:last-child {
+            border-bottom: none;
+        }
+
+        .admin-name {
+            font-weight: 600;
+            color: #075985;
+        }
+
+        .admin-role {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #075985;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 850px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 30px;
+            }
+
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo-text {
+                font-size: 14px;
+            }
+
+            .logo img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .page-header {
+                padding: 45px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 26px;
+            }
+
+            .container {
+                width: 92%;
+                margin: 35px auto;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+            .department-title {
+                font-size: 15px;
+            }
+
+            .faculty-grid {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
+<!-- NAVBAR -->
+<nav class="navbar">
 
     <div class="logo">
         <img src="logoo.png" alt="College Logo">
-        <span>Shaheed Darshan Singh Pheruman Memorial College for Women</span>
+
+        <div class="logo-text">
+            Shaheed Darshan Singh Pheruman<br>
+            Memorial College for Women
+        </div>
     </div>
 
     <ul class="nav-links">
@@ -195,170 +335,471 @@ footer {
         <li><a href="courses.html">Courses</a></li>
         <li><a href="facilities.html">Facilities</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faculty.html" class="active">Faculty</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 
 </nav>
 
 
-<section class="hero">
+<!-- PAGE HEADER -->
+<section class="page-header">
 
-    <div>
-        <h1>Faculty</h1>
-        <p>Department-wise Faculty Information</p>
-    </div>
+    <h1>Faculty & Staff</h1>
+
+    <p>
+        Meet our dedicated faculty and administrative staff
+    </p>
 
 </section>
 
 
+<!-- MAIN CONTENT -->
 <div class="container">
 
-    <div class="note">
-        Faculty information is organised department-wise. Current
-        faculty names should be kept in accordance with the official
-        college faculty information.
+    <div class="intro">
+
+        <h2>Our Faculty</h2>
+
+        <p>
+            The college has dedicated faculty members across different
+            academic departments, contributing to teaching and student development.
+        </p>
+
+    </div>
+
+
+    <!-- PRINCIPAL -->
+    <div class="principal-card">
+
+        <h3>PRINCIPAL OFFICIATING</h3>
+
+        <div class="principal-name">
+            Dr. (Mrs.) Anu Kapil
+        </div>
+
+        <div class="qualification">
+            M.Sc. (Hons.), Ph.D., UGC NET
+        </div>
+
+    </div>
+
+
+    <!-- MATHEMATICS -->
+    <div class="department">
+
+        <div class="department-title">
+            Department of Mathematics
+        </div>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">Mrs. Jasleen Kaur</div>
+                <div class="faculty-qualification">
+                    M.Sc., B.Ed.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ECONOMICS -->
+    <div class="department">
+
+        <div class="department-title">
+            Department of Economics
+        </div>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Dr. (Mrs.) Anu Kapil
+                </div>
+                <div class="faculty-qualification">
+                    M.Sc. (Hons.), Ph.D., UGC NET
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">2</div>
+                <div class="faculty-name">
+                    Ms. Gursimran Kaur
+                </div>
+                <div class="faculty-qualification">
+                    MBA
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ENGLISH -->
+    <div class="department">
+
+        <div class="department-title">
+            Department of English
+        </div>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Inderpal Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.A., UGC NET
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">2</div>
+                <div class="faculty-name">
+                    Ms. Gurpreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.A.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PUNJABI -->
+    <div class="department">
+
+        <div class="department-title">
+            Department of Punjabi
+        </div>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Dr. (Mrs.) Harwant Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.A., Ph.D., UGC NET
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">2</div>
+                <div class="faculty-name">
+                    Mrs. Karamjit Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.A., B.Ed., UGC NET
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 
     <!-- COMPUTER SCIENCE -->
+    <div class="department">
 
-    <section class="department">
-
-        <h2>Computer Science & Applications</h2>
+        <div class="department-title">
+            PG Department of Computer Science and Application
+        </div>
 
         <div class="faculty-grid">
 
             <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Computer Science & Applications</p>
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Vandana
+                </div>
+                <div class="faculty-qualification">
+                    MCA, UGC NET
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">2</div>
+                <div class="faculty-name">
+                    Ms. Sukhmanpreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.Sc. Computer Science
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">3</div>
+                <div class="faculty-name">
+                    Ms. Navdeep Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.C.A.
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">4</div>
+                <div class="faculty-name">
+                    Ms. Kiranpreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.Sc. IT
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">5</div>
+                <div class="faculty-name">
+                    Ms. Sanreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    MCA
+                </div>
             </div>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- SOCIAL SCIENCES -->
+    <!-- POLITICAL SCIENCE -->
+    <div class="department">
 
-    <section class="department">
-
-        <h2>Social Sciences</h2>
+        <div class="department-title">
+            Department of Political Science
+        </div>
 
         <div class="faculty-grid">
 
             <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Social Sciences</p>
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Daljeet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.A., M.Phil., UGC NET
+                </div>
             </div>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- LANGUAGES -->
+    <!-- HISTORY -->
+    <div class="department">
 
-    <section class="department">
-
-        <h2>Languages</h2>
+        <div class="department-title">
+            Department of History
+        </div>
 
         <div class="faculty-grid">
 
             <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Languages</p>
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Jyoti
+                </div>
+                <div class="faculty-qualification">
+                    M.A., M.Phil.
+                </div>
             </div>
 
         </div>
 
-    </section>
-
-
-    <!-- COMMERCE -->
-
-    <section class="department">
-
-        <h2>Commerce & Management</h2>
-
-        <div class="faculty-grid">
-
-            <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Commerce & Management</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MUSIC -->
-
-    <section class="department">
-
-        <h2>Music</h2>
-
-        <div class="faculty-grid">
-
-            <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Music</p>
-            </div>
-
-        </div>
-
-    </section>
+    </div>
 
 
     <!-- PHYSICAL EDUCATION -->
+    <div class="department">
 
-    <section class="department">
-
-        <h2>Physical Education</h2>
+        <div class="department-title">
+            Department of Physical Education
+        </div>
 
         <div class="faculty-grid">
 
             <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Physical Education</p>
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Rupinder Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.P.Ed.
+                </div>
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+
+    <!-- MUSIC -->
+    <div class="department">
+
+        <div class="department-title">
+            Department of Music
+        </div>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Rajpreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.A., M.Phil. Inst. & Vocal, B.Ed., UGC NET
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">2</div>
+                <div class="faculty-name">
+                    S. Satnam Singh
+                </div>
+                <div class="faculty-qualification">
+                    Tabla Player
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 
     <!-- FASHION DESIGNING -->
+    <div class="department">
 
-    <section class="department">
-
-        <h2>Fashion Designing</h2>
+        <div class="department-title">
+            Department of Fashion Designing
+        </div>
 
         <div class="faculty-grid">
 
             <div class="faculty-card">
-                <div class="teacher-icon">👩‍🏫</div>
-                <h3>Faculty Member</h3>
-                <p>Fashion Designing</p>
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Mrs. Amandeep Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.Sc. Fashion Designing
+                </div>
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+
+    <!-- COMMERCE AND MANAGEMENT -->
+    <div class="department">
+
+        <div class="department-title">
+            Department of Commerce and Management
+        </div>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="faculty-number">1</div>
+                <div class="faculty-name">
+                    Ms. Shagunpreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.Com.
+                </div>
+            </div>
+
+            <div class="faculty-card">
+                <div class="faculty-number">2</div>
+                <div class="faculty-name">
+                    Ms. Khushpreet Kaur
+                </div>
+                <div class="faculty-qualification">
+                    M.Com.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADMINISTRATIVE STAFF -->
+    <div class="admin-section">
+
+        <div class="department-title">
+            Administrative Staff
+        </div>
+
+        <div class="admin-card">
+
+            <div class="admin-item">
+                <div class="admin-name">
+                    S. Tejinder Singh
+                </div>
+                <div class="admin-role">
+                    O.S.D.
+                </div>
+            </div>
+
+            <div class="admin-item">
+                <div class="admin-name">
+                    Mrs. Ranbir Kaur
+                </div>
+                <div class="admin-role">
+                    O.S.D.
+                </div>
+            </div>
+
+            <div class="admin-item">
+                <div class="admin-name">
+                    Mrs. Kulwinder Kaur
+                </div>
+                <div class="admin-role">
+                    Typist
+                </div>
+            </div>
+
+            <div class="admin-item">
+                <div class="admin-name">
+                    Mrs. Jaspreet Kaur
+                </div>
+                <div class="admin-role">
+                    Clerk
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 
+<!-- FOOTER -->
 <footer>
-    © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women
-    <br>
-    Rayya, Amritsar, Punjab
+
+    <p>
+        © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women
+    </p>
+
+    <p>
+        Rayya, Amritsar, Punjab
+    </p>
+
 </footer>
 
 </body>
