@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Departments - SDSPM College</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: #f5f7fb;
+}
+
+nav {
+    background: white;
+    min-height: 78px;
+    padding: 10px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #123b5d;
+    font-weight: 700;
+    max-width: 470px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #263238;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(rgba(9,59,92,.85),rgba(8,119,185,.82)),
+        url("gate.jpeg") center/cover;
+}
+
+.hero h1 {
+    font-size: 38px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 60px auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 7px 25px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    margin: auto auto 18px;
+    border-radius: 50%;
+    background: #eaf6fc;
+    color: #0877b9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+h2 {
+    color: #123b5d;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0877b9;
+    color: white;
+    padding: 9px 17px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+footer {
+    background: #123b5d;
+    color: white;
+    text-align: center;
+    padding: 28px;
+    margin-top: 80px;
+    font-size: 13px;
+}
+
+@media(max-width:900px) {
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        <img src="logoo.png" alt="College Logo">
+        <span>Shaheed Darshan Singh Pheruman Memorial College for Women</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="sdspc.html">Home</a></li>
+        <li><a href="Read more.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<section class="hero">
+    <div>
+        <h1>Departments</h1>
+        <p>Academic Departments of the College</p>
+    </div>
+</section>
+
+
+<div class="container">
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h2>Postgraduate Department of Computer Science & Application</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h2>Social Sciences</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🗣️</div>
+            <h2>Languages</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💼</div>
+            <h2>Commerce & Management</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎵</div>
+            <h2>Music</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏃</div>
+            <h2>Physical Education</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">👗</div>
+            <h2>Fashion Designing</h2>
+            <a href="faculty.html" class="btn">View Faculty</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women
+    <br>
+    Rayya, Amritsar, Punjab
+</footer>
+
+</body>
+</html>

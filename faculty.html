@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Faculty - SDSPM College</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: #f5f7fb;
+    color: #263238;
+}
+
+nav {
+    background: white;
+    min-height: 78px;
+    padding: 10px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #123b5d;
+    font-weight: 700;
+    max-width: 470px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #263238;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    background:
+        linear-gradient(rgba(9,59,92,.85),rgba(8,119,185,.82)),
+        url("gate.jpeg") center/cover;
+}
+
+.hero h1 {
+    font-size: 38px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.department {
+    margin-bottom: 45px;
+}
+
+.department h2 {
+    color: #123b5d;
+    border-left: 5px solid #0877b9;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.faculty-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 22px rgba(0,0,0,.07);
+    text-align: center;
+}
+
+.teacher-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin: auto auto 15px;
+    background: #eaf6fc;
+    color: #0877b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.faculty-card h3 {
+    color: #123b5d;
+    font-size: 16px;
+}
+
+.faculty-card p {
+    color: #68757d;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.note {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    color: #68757d;
+    font-size: 13px;
+}
+
+footer {
+    background: #123b5d;
+    color: white;
+    text-align: center;
+    padding: 28px;
+    margin-top: 80px;
+    font-size: 13px;
+}
+
+@media(max-width:900px) {
+
+    .faculty-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .faculty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        <img src="logoo.png" alt="College Logo">
+        <span>Shaheed Darshan Singh Pheruman Memorial College for Women</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="sdspc.html">Home</a></li>
+        <li><a href="Read more.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<section class="hero">
+
+    <div>
+        <h1>Faculty</h1>
+        <p>Department-wise Faculty Information</p>
+    </div>
+
+</section>
+
+
+<div class="container">
+
+    <div class="note">
+        Faculty information is organised department-wise. Current
+        faculty names should be kept in accordance with the official
+        college faculty information.
+    </div>
+
+
+    <!-- COMPUTER SCIENCE -->
+
+    <section class="department">
+
+        <h2>Computer Science & Applications</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Computer Science & Applications</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOCIAL SCIENCES -->
+
+    <section class="department">
+
+        <h2>Social Sciences</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Social Sciences</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LANGUAGES -->
+
+    <section class="department">
+
+        <h2>Languages</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Languages</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMERCE -->
+
+    <section class="department">
+
+        <h2>Commerce & Management</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Commerce & Management</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+    <section class="department">
+
+        <h2>Music</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Music</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHYSICAL EDUCATION -->
+
+    <section class="department">
+
+        <h2>Physical Education</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Physical Education</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FASHION DESIGNING -->
+
+    <section class="department">
+
+        <h2>Fashion Designing</h2>
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+                <div class="teacher-icon">👩‍🏫</div>
+                <h3>Faculty Member</h3>
+                <p>Fashion Designing</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<footer>
+    © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women
+    <br>
+    Rayya, Amritsar, Punjab
+</footer>
+
+</body>
+</html>
