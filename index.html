@@ -1,1014 +1,1070 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Shaheed Darshan Singh Pheruman Memorial College</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            color: #222;
-            background: #f5f7fb;
-        }
-
-        /* ================= NAVBAR ================= */
-
-        nav {
-            width: 100%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 6%;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-        }
-
-        .logo h2 {
-            font-size: 18px;
-            color: #164b78;
-            line-height: 1.2;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 15px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #1677b8;
-        }
-
-        /* ================= HERO SLIDER ================= */
-
-        .hero {
-            position: relative;
-            height: 620px;
-            overflow: hidden;
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            animation: slideShow 20s infinite;
-        }
-
-        .slide:nth-child(1) {
-            background-image: url("gate.jpeg");
-            animation-delay: 0s;
-        }
-
-        .slide:nth-child(2) {
-            background-image: url("clss.jpeg");
-            animation-delay: 5s;
-        }
-
-        .slide:nth-child(3) {
-            background-image: url("library.jpg");
-            animation-delay: 10s;
-        }
-
-        .slide:nth-child(4) {
-            background-image: url("rec.jpeg");
-            animation-delay: 15s;
-        }
-
-        @keyframes slideShow {
-            0% {
-                opacity: 0;
-            }
-
-            5% {
-                opacity: 1;
-            }
-
-            25% {
-                opacity: 1;
-            }
-
-            30% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                90deg,
-                rgba(0, 30, 60, 0.82),
-                rgba(0, 50, 90, 0.50),
-                rgba(0, 0, 0, 0.25)
-            );
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 5;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0 8%;
-            color: white;
-            max-width: 900px;
-        }
-
-        .hero-content span {
-            font-size: 15px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            color: #d9efff;
-        }
-
-        .hero-content h1 {
-            font-size: 52px;
-            line-height: 1.12;
-            margin-bottom: 18px;
-        }
-
-        .hero-content p {
-            font-size: 20px;
-            max-width: 650px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 7px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #1677b8;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #0d5d92;
-            transform: translateY(-3px);
-        }
-
-        .btn-light {
-            background: white;
-            color: #164b78;
-        }
-
-        .btn-light:hover {
-            background: #eaf5fc;
-            transform: translateY(-3px);
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            padding: 85px 8%;
-            background: white;
-        }
-
-        .about-container {
-            max-width: 1150px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .about-text span,
-        .section-title span {
-            color: #1677b8;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .about-text h2 {
-            font-size: 36px;
-            color: #164b78;
-            margin: 12px 0 20px;
-        }
-
-        .about-text p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 12px;
-            text-decoration: none;
-            color: white;
-            background: #1677b8;
-            padding: 12px 22px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .read-more:hover {
-            background: #0d5d92;
-            transform: translateY(-2px);
-        }
-
-        /* ================= WHY CHOOSE US ================= */
-
-        .why {
-            padding: 80px 8%;
-            background: #f5f7fb;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #164b78;
-            margin-top: 10px;
-        }
-
-        .why-grid {
-            max-width: 1150px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .why-card {
-            background: white;
-            padding: 30px 22px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            transition: 0.3s;
-        }
-
-        .why-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-        }
-
-        .icon {
-            width: 60px;
-            height: 60px;
-            background: #e7f4fc;
-            color: #1677b8;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 27px;
-        }
-
-        .why-card h3 {
-            color: #164b78;
-            margin-bottom: 10px;
-        }
-
-        .why-card p {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* ================= DEPARTMENTS ================= */
-
-        .departments {
-            padding: 80px 8%;
-            background: white;
-        }
-
-        .department-grid {
-            max-width: 950px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .department-card {
-            border-radius: 12px;
-            padding: 35px 25px;
-            text-align: center;
-            background: #f5f9fc;
-            border: 1px solid #e2edf5;
-            transition: 0.3s;
-        }
-
-        .department-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-        }
-
-        .department-card .dept-icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .department-card h3 {
-            color: #164b78;
-            margin-bottom: 10px;
-        }
-
-        .department-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        /* ================= EXPLORE ================= */
-
-        .explore {
-            padding: 75px 8%;
-            background: linear-gradient(135deg, #164b78, #1677b8);
-            color: white;
-            text-align: center;
-        }
-
-        .explore h2 {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .explore p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .explore-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .explore-buttons a {
-            text-decoration: none;
-            background: white;
-            color: #164b78;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .explore-buttons a:hover {
-            transform: translateY(-3px);
-            background: #eaf5fc;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #102f4b;
-            color: white;
-            padding: 55px 8% 20px;
-        }
-
-        .footer-container {
-            max-width: 1150px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 50px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .footer-logo img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-        }
-
-        footer h3 {
-            margin-bottom: 18px;
-        }
-
-        footer p {
-            color: #d3e0ea;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        footer ul {
-            list-style: none;
-        }
-
-        footer ul li {
-            margin-bottom: 10px;
-        }
-
-        footer ul li a {
-            color: #d3e0ea;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        footer ul li a:hover {
-            color: white;
-            padding-left: 4px;
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.15);
-            margin-top: 40px;
-            padding-top: 18px;
-            text-align: center;
-            color: #b9cbd8;
-            font-size: 13px;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media (max-width: 900px) {
-
-            nav {
-                padding: 12px 4%;
-            }
-
-            .nav-links {
-                gap: 15px;
-            }
-
-            .nav-links a {
-                font-size: 13px;
-            }
-
-            .hero {
-                height: 560px;
-            }
-
-            .hero-content h1 {
-                font-size: 42px;
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .department-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-                padding: 10px 3%;
-            }
-
-            .logo h2 {
-                font-size: 15px;
-            }
-
-            .logo img {
-                width: 43px;
-                height: 43px;
-            }
-
-            .nav-links {
-                gap: 11px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
-            .hero {
-                height: 600px;
-            }
-
-            .hero-content {
-                padding: 0 6%;
-                align-items: center;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 34px;
-            }
-
-            .hero-content p {
-                font-size: 16px;
-            }
-
-            .hero-buttons {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .about,
-            .why,
-            .departments {
-                padding: 60px 6%;
-            }
-
-            .about-text h2,
-            .section-title h2 {
-                font-size: 29px;
-            }
-
-            .about-image img {
-                height: 280px;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .department-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shaheed Darshan Singh Pheruman Memorial College for Women</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color:#222;
+    background:#f5f7fb;
+}
+
+nav{
+    width:100%;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 5%;
+    box-shadow:0 2px 12px rgba(0,0,0,.10);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.logo h2{
+    color:#164b78;
+    font-size:17px;
+    line-height:1.2;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#1677b8;
+}
+
+.apply-btn{
+    background:#1677b8!important;
+    color:#fff!important;
+    padding:10px 17px;
+    border-radius:6px;
+}
+
+.hero{
+    height:620px;
+    position:relative;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    animation:slideShow 20s infinite;
+}
+
+.slide:nth-child(1){
+    background-image:url("gate.jpeg");
+}
+
+.slide:nth-child(2){
+    background-image:url("clss.jpeg");
+    animation-delay:5s;
+}
+
+.slide:nth-child(3){
+    background-image:url("library.jpg");
+    animation-delay:10s;
+}
+
+.slide:nth-child(4){
+    background-image:url("rec.jpeg");
+    animation-delay:15s;
+}
+
+@keyframes slideShow{
+    0%{opacity:0}
+    5%{opacity:1}
+    25%{opacity:1}
+    30%{opacity:0}
+    100%{opacity:0}
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,30,60,.85),
+        rgba(0,50,90,.55),
+        rgba(0,0,0,.25)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:0 8%;
+    color:#fff;
+    max-width:950px;
+}
+
+.hero-content span{
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#d9efff;
+    margin-bottom:15px;
+}
+
+.hero-content h1{
+    font-size:52px;
+    line-height:1.12;
+    margin-bottom:18px;
+}
+
+.hero-content p{
+    font-size:19px;
+    line-height:1.6;
+    max-width:700px;
+    margin-bottom:28px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:13px 24px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.primary{
+    background:#1677b8;
+    color:#fff;
+}
+
+.light{
+    background:#fff;
+    color:#164b78;
+}
+
+section{
+    padding:75px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title span{
+    color:#1677b8;
+    font-size:13px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    color:#164b78;
+    font-size:36px;
+    margin-top:8px;
+}
+
+.about{
+    background:#fff;
+}
+
+.about-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.about-img img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    border-radius:14px;
+}
+
+.about-text h2{
+    color:#164b78;
+    font-size:35px;
+    margin:10px 0 18px;
+}
+
+.about-text p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.info{
+    background:#f5f7fb;
+}
+
+.info-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.info-card{
+    background:#fff;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.info-card .icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.info-card h3{
+    color:#164b78;
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.courses{
+    background:#fff;
+}
+
+.course-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.course-card{
+    border:1px solid #e1eaf1;
+    background:#f8fbfd;
+    padding:25px 20px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.09);
+}
+
+.course-card h3{
+    color:#164b78;
+    margin-bottom:10px;
+}
+
+.course-card p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.course-card a{
+    display:inline-block;
+    margin-top:15px;
+    color:#1677b8;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.admission{
+    background:#f5f7fb;
+}
+
+.admission-box{
+    max-width:1100px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:14px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.admission-box h3{
+    color:#164b78;
+    margin-bottom:15px;
+}
+
+.admission-box p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+.admission-box ul{
+    padding-left:20px;
+    color:#555;
+    line-height:2;
+}
+
+.activities{
+    background:#fff;
+}
+
+.activity-grid{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.activity{
+    text-align:center;
+    background:#f5f9fc;
+    padding:35px 25px;
+    border-radius:12px;
+    border:1px solid #e0ebf3;
+}
+
+.activity .big{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.activity h3{
+    color:#164b78;
+    margin-bottom:10px;
+}
+
+.activity p{
+    color:#666;
+    line-height:1.6;
+}
+
+.news{
+    background:#f5f7fb;
+}
+
+.news-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.news-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.news-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.news-card div{
+    padding:22px;
+}
+
+.news-card h3{
+    color:#164b78;
+    margin-bottom:10px;
+}
+
+.news-card p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.gallery{
+    background:#fff;
+}
+
+.gallery-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+.cta{
+    background:linear-gradient(135deg,#164b78,#1677b8);
+    text-align:center;
+    color:#fff;
+}
+
+.cta h2{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto auto 25px;
+    line-height:1.7;
+}
+
+footer{
+    background:#102f4b;
+    color:#fff;
+    padding:50px 8% 20px;
+}
+
+.footer-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.footer-logo img{
+    width:55px;
+    height:55px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer li,
+footer a{
+    color:#d3e0ea;
+    font-size:14px;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer a{
+    text-decoration:none;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:35px;
+    padding-top:18px;
+    text-align:center;
+    color:#b9cbd8;
+    font-size:13px;
+}
+
+@media(max-width:950px){
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:12px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .info-grid,
+    .course-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .admission-box{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav-links{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .hero{
+        height:590px;
+    }
+
+    .hero-content{
+        align-items:center;
+        text-align:center;
+        padding:0 6%;
+    }
+
+    .hero-content h1{
+        font-size:33px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+    .info-grid,
+    .course-grid,
+    .activity-grid,
+    .news-grid,
+    .gallery-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid img{
+        height:230px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+<nav>
+    <div class="logo">
+        <img src="logoo.png" alt="College Logo">
+        <h2>
+            Shaheed Darshan Singh Pheruman<br>
+            Memorial College for Women
+        </h2>
+    </div>
 
-    <nav>
+    <div class="nav-links">
+        <a href="sdspc.html">Home</a>
+        <a href="Read more.html">About</a>
+        <a href="courses.html">Academics</a>
+        <a href="#admission">Admissions</a>
+        <a href="facilities.html">Campus Life</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#news">News & Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="#admission" class="apply-btn">Apply Now</a>
+    </div>
+</nav>
 
-        <div class="logo">
-            <img src="logoo.png" alt="College Logo">
+<section class="hero">
 
-            <h2>
-                Shaheed Darshan Singh Pheruman<br>
-                Memorial College
-            </h2>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+
+    <div class="hero-content">
+        <span>Welcome to Our College</span>
+
+        <h1>
+            Shaheed Darshan Singh Pheruman
+            Memorial College for Women
+        </h1>
+
+        <p>
+            Empowering Women Through Quality Education
+            and creating opportunities through knowledge,
+            confidence and learning.
+        </p>
+
+        <div class="buttons">
+            <a href="courses.html" class="btn primary">
+                Explore Courses
+            </a>
+
+            <a href="#admission" class="btn light">
+                Admission Information
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+
+    <div class="about-grid">
+
+        <div class="about-img">
+            <img src="s.jpeg" alt="College Campus">
         </div>
 
-        <div class="nav-links">
+        <div class="about-text">
 
-            <a href="sdspc.html">Home</a>
+            <span>About Our College</span>
 
-            <a href="Read more.html">About</a>
+            <h2>Education With Purpose</h2>
 
-            <a href="courses.html">Courses</a>
+            <p>
+                Shaheed Darshan Singh Pheruman Memorial College
+                for Women is located at Rayya, Amritsar, Punjab.
+                The college is committed to providing quality
+                education and opportunities for women.
+            </p>
 
-            <a href="facilities.html">Facilities</a>
+            <p>
+                Academic programmes, learning resources,
+                campus facilities and student activities
+                provide opportunities for students to learn,
+                develop confidence and prepare for their future.
+            </p>
 
-            <a href="gallery.html">Gallery</a>
-
-            <a href="contact.html">Contact</a>
+            <a href="Read more.html" class="btn primary">
+                Read More
+            </a>
 
         </div>
 
-    </nav>
+    </div>
+</section>
 
+<section class="info">
 
-    <!-- ================= HERO ================= -->
+    <div class="section-title">
+        <span>College Highlights</span>
+        <h2>Explore Our College</h2>
+    </div>
 
-    <section class="hero">
+    <div class="info-grid">
 
-        <!-- Photo 1 -->
-        <div class="slide"></div>
+        <div class="info-card">
+            <div class="icon">🎓</div>
+            <h3>Academic Programmes</h3>
+            <p>
+                Undergraduate, postgraduate and diploma
+                programmes for students.
+            </p>
+        </div>
 
-        <!-- Photo 2 -->
-        <div class="slide"></div>
+        <div class="info-card">
+            <div class="icon">📚</div>
+            <h3>Learning Resources</h3>
+            <p>
+                Library and computer facilities supporting
+                academic learning.
+            </p>
+        </div>
 
-        <!-- Photo 3 -->
-        <div class="slide"></div>
+        <div class="info-card">
+            <div class="icon">🏫</div>
+            <h3>Campus Facilities</h3>
+            <p>
+                Facilities supporting academic and
+                student activities.
+            </p>
+        </div>
 
-        <!-- Photo 4 -->
-        <div class="slide"></div>
+        <div class="info-card">
+            <div class="icon">🌟</div>
+            <h3>Student Development</h3>
+            <p>
+                NSS, NCC, cultural and other activities
+                for overall development.
+            </p>
+        </div>
 
+    </div>
+</section>
 
-        <div class="hero-content">
+<section class="courses">
 
-            <span>Welcome to Our College</span>
+    <div class="section-title">
+        <span>Academics</span>
+        <h2>Our Courses</h2>
+    </div>
 
-            <h1>
-                Shaheed Darshan Singh Pheruman
-                Memorial College
-            </h1>
+    <div class="course-grid">
+
+        <div class="course-card">
+            <h3>M.Sc. Computer Science</h3>
+            <p>
+                Postgraduate programme in Computer Science.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>BCA</h3>
+            <p>
+                Undergraduate programme focused on
+                computer applications.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>B.A.</h3>
+            <p>
+                Undergraduate programme in Arts and
+                related areas of study.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>B.Sc. Economics</h3>
+            <p>
+                Undergraduate programme focused on
+                economics and related learning.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>B.Com.</h3>
+            <p>
+                Undergraduate programme in commerce
+                and business-related studies.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>PGDCA</h3>
+            <p>
+                Postgraduate Diploma in Computer Applications.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>DCA</h3>
+            <p>
+                Diploma programme in Computer Applications.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+        <div class="course-card">
+            <h3>Stitching & Tailoring</h3>
+            <p>
+                Skill-oriented diploma programme in
+                stitching and tailoring.
+            </p>
+            <a href="courses.html">View Details →</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="admission" id="admission">
+
+    <div class="section-title">
+        <span>Admissions</span>
+        <h2>Admission Information</h2>
+    </div>
+
+    <div class="admission-box">
+
+        <div>
+            <h3>Admission Process</h3>
+
+            <p>
+                Students interested in admission can contact
+                the college for programme availability,
+                eligibility and current admission details.
+            </p>
+
+            <ul>
+                <li>Select your desired programme.</li>
+                <li>Check eligibility requirements.</li>
+                <li>Contact the college for admission information.</li>
+                <li>Complete the required admission procedure.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Documents & Enquiry</h3>
+
+            <p>
+                Students should keep their relevant academic
+                and identification documents ready as required
+                during the admission process.
+            </p>
+
+            <p>
+                For current admission dates, fees and
+                programme-specific requirements, contact
+                the college directly.
+            </p>
+
+            <a href="contact.html" class="btn primary">
+                Contact College
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="activities">
+
+    <div class="section-title">
+        <span>Campus Life</span>
+        <h2>Student Activities</h2>
+    </div>
+
+    <div class="activity-grid">
+
+        <div class="activity">
+            <div class="big">🤝</div>
+            <h3>NSS</h3>
+            <p>
+                Community service and social participation
+                through National Service Scheme activities.
+            </p>
+        </div>
+
+        <div class="activity">
+            <div class="big">🇮🇳</div>
+            <h3>NCC</h3>
+            <p>
+                Activities encouraging discipline,
+                leadership and teamwork.
+            </p>
+        </div>
+
+        <div class="activity">
+            <div class="big">❤️</div>
+            <h3>Red Ribbon Club</h3>
+            <p>
+                Awareness and social responsibility
+                activities involving students.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="news" id="news">
+
+    <div class="section-title">
+        <span>Latest Updates</span>
+        <h2>News & Events</h2>
+    </div>
+
+    <div class="news-grid">
+
+        <div class="news-card">
+            <img src="gate.jpeg" alt="College Event">
+            <div>
+                <h3>College Activities</h3>
+                <p>
+                    Updates and activities from the college
+                    campus and student community.
+                </p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="clss.jpeg" alt="Academic Activity">
+            <div>
+                <h3>Academic Activities</h3>
+                <p>
+                    Academic learning and student-focused
+                    activities conducted at the college.
+                </p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img src="rec.jpeg" alt="Student Activity">
+            <div>
+                <h3>Student Events</h3>
+                <p>
+                    Student participation in various
+                    campus activities and events.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="gallery">
+
+    <div class="section-title">
+        <span>Campus Moments</span>
+        <h2>Gallery</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="gate.jpeg" alt="College Gate">
+        <img src="clss.jpeg" alt="Classroom">
+        <img src="library.jpg" alt="Library">
+        <img src="rec.jpeg" alt="College Activity">
+
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>Ready to Explore Our College?</h2>
+
+    <p>
+        Explore academic programmes, campus facilities,
+        student activities and admission information.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+        <a href="courses.html" class="btn light">
+            View Courses
+        </a>
+
+        <a href="contact.html" class="btn light">
+            Contact Us
+        </a>
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                <img src="logoo.png" alt="College Logo">
+
+                <h3>
+                    Shaheed Darshan Singh<br>
+                    Pheruman Memorial College
+                </h3>
+            </div>
 
             <p>
                 Empowering Women Through Quality Education
-                and building a brighter future through knowledge,
-                confidence and opportunities.
+                and creating opportunities through learning,
+                confidence and student development.
             </p>
 
-            <div class="hero-buttons">
+        </div>
 
-                <a href="courses.html" class="btn btn-primary">
-                    Explore Courses
-                </a>
+        <div>
 
-                <a href="Read more.html" class="btn btn-light">
-                    Read More
-                </a>
+            <h3>Quick Links</h3>
 
-            </div>
+            <ul>
+                <li><a href="sdspc.html">Home</a></li>
+                <li><a href="Read more.html">About</a></li>
+                <li><a href="courses.html">Academics</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
         </div>
 
-    </section>
+        <div>
 
+            <h3>Contact</h3>
 
-    <!-- ================= ABOUT ================= -->
+            <p>
+                📍 Rayya, Amritsar,<br>
+                Punjab, India
+            </p>
 
-    <section class="about">
+            <p>☎ 01853-222403</p>
 
-        <div class="about-container">
+            <p>📱 +91-9646847383</p>
 
-            <div class="about-image">
-                <img src="s.jpeg" alt="College Campus">
-            </div>
-
-            <div class="about-text">
-
-                <span>About Our College</span>
-
-                <h2>
-                    Education With Purpose
-                </h2>
-
-                <p>
-                    Shaheed Darshan Singh Pheruman Memorial College
-                    for Women is located at Rayya, Amritsar, Punjab.
-                    The college is committed to providing quality
-                    education and creating opportunities for women
-                    to grow academically and personally.
-                </p>
-
-                <p>
-                    With academic programmes, campus facilities and
-                    student activities, the college provides an
-                    environment where students can learn, develop
-                    confidence and prepare for their future.
-                </p>
-
-                <a href="Read more.html" class="read-more">
-                    Read More
-                </a>
-
-            </div>
+            <p>✉ sdspmcfwr@gmail.com</p>
 
         </div>
 
-    </section>
+    </div>
 
+    <div class="copyright">
+        © 2026 Shaheed Darshan Singh Pheruman Memorial College.
+        All Rights Reserved.
+    </div>
 
-    <!-- ================= WHY CHOOSE US ================= -->
-
-    <section class="why">
-
-        <div class="section-title">
-
-            <span>Our Strengths</span>
-
-            <h2>Why Choose Us?</h2>
-
-        </div>
-
-
-        <div class="why-grid">
-
-            <div class="why-card">
-
-                <div class="icon">🎓</div>
-
-                <h3>Quality Education</h3>
-
-                <p>
-                    Focus on academic learning and
-                    overall student development.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="icon">📚</div>
-
-                <h3>Learning Environment</h3>
-
-                <p>
-                    A supportive environment that
-                    encourages students to learn and grow.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="icon">🏫</div>
-
-                <h3>Campus Facilities</h3>
-
-                <p>
-                    Useful facilities that support
-                    academic and student activities.
-                </p>
-
-            </div>
-
-
-            <div class="why-card">
-
-                <div class="icon">🌟</div>
-
-                <h3>Student Development</h3>
-
-                <p>
-                    Opportunities for students to
-                    develop confidence and skills.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= DEPARTMENTS ================= -->
-
-    <section class="departments">
-
-        <div class="section-title">
-
-            <span>Student Activities</span>
-
-            <h2>Our Departments</h2>
-
-        </div>
-
-
-        <div class="department-grid">
-
-            <div class="department-card">
-
-                <div class="dept-icon">🤝</div>
-
-                <h3>NSS</h3>
-
-                <p>
-                    National Service Scheme activities
-                    encourage students to participate
-                    in community service and social activities.
-                </p>
-
-            </div>
-
-
-            <div class="department-card">
-
-                <div class="dept-icon">🇮🇳</div>
-
-                <h3>NCC</h3>
-
-                <p>
-                    NCC provides students with opportunities
-                    to develop discipline, leadership and
-                    teamwork through various activities.
-                </p>
-
-            </div>
-
-
-            <div class="department-card">
-
-                <div class="dept-icon">❤️</div>
-
-                <h3>Red Ribbon Club</h3>
-
-                <p>
-                    Student activities focused on awareness,
-                    social responsibility and community
-                    participation.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EXPLORE ================= -->
-
-    <section class="explore">
-
-        <h2>Explore Our College</h2>
-
-        <p>
-            Discover our academic programmes, campus facilities
-            and memorable moments through the dedicated pages
-            of our website.
-        </p>
-
-        <div class="explore-buttons">
-
-            <a href="courses.html">
-                Courses
-            </a>
-
-            <a href="facilities.html">
-                Facilities
-            </a>
-
-            <a href="gallery.html">
-                Gallery
-            </a>
-
-            <a href="contact.html">
-                Contact Us
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-container">
-
-            <div>
-
-                <div class="footer-logo">
-
-                    <img src="logoo.png" alt="College Logo">
-
-                    <h3>
-                        Shaheed Darshan Singh<br>
-                        Pheruman Memorial College
-                    </h3>
-
-                </div>
-
-                <p>
-                    Empowering Women Through Quality Education.
-                    Building confidence, knowledge and opportunities
-                    for a brighter future.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>Quick Links</h3>
-
-                <ul>
-
-                    <li>
-                        <a href="sdspc.html">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="Read more.html">About</a>
-                    </li>
-
-                    <li>
-                        <a href="courses.html">Courses</a>
-                    </li>
-
-                    <li>
-                        <a href="facilities.html">Facilities</a>
-                    </li>
-
-                    <li>
-                        <a href="gallery.html">Gallery</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h3>Contact</h3>
-
-                <p>
-                    📍 Rayya, Amritsar,<br>
-                    Punjab, India
-                </p>
-
-                <p>
-                    ☎ 01853-222403
-                </p>
-
-                <p>
-                    📱 +91-9646847383
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright">
-
-            © 2026 Shaheed Darshan Singh Pheruman Memorial College.
-            All Rights Reserved.
-
-        </div>
-
-    </footer>
+</footer>
 
 </body>
 </html>
