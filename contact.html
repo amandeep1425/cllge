@@ -1,388 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - SDSPMC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<title>Contact | SDSP Memorial College</title>
 
-        body {
-            background: #f5f8fc;
-            color: #333;
-        }
-
-        /* Navbar */
-        nav {
-            background: #ffffff;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0877b9;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #0877b9;
-        }
-
-        /* Header */
-        .page-header {
-            background: linear-gradient(135deg, #0877b9, #00a6d6);
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
-
-        .page-header h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .page-header p {
-            font-size: 17px;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            width: 90%;
-            max-width: 1100px;
-            margin: 50px auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .contact-box,
-        .form-box {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .contact-box h2,
-        .form-box h2 {
-            color: #0877b9;
-            margin-bottom: 25px;
-        }
-
-        .contact-info {
-            margin-bottom: 22px;
-        }
-
-        .contact-info h3 {
-            font-size: 18px;
-            color: #222;
-            margin-bottom: 7px;
-        }
-
-        .contact-info p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Form */
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 7px;
-            font-size: 15px;
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #0877b9;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: none;
-        }
-
-        .btn {
-            background: #0877b9;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 7px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #055f94;
-        }
-
-        /* Map */
-        .map-section {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto 50px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .map-section h2 {
-            color: #0877b9;
-            margin-bottom: 20px;
-        }
-
-        .map-box {
-            background: #e9f3f8;
-            padding: 35px;
-            border-radius: 10px;
-        }
-
-        .map-box p {
-            margin-bottom: 15px;
-        }
-
-        .map-btn {
-            display: inline-block;
-            text-decoration: none;
-            background: #0877b9;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 7px;
-        }
-
-        /* Footer */
-        footer {
-            background: #0877b9;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 30px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header h1 {
-                font-size: 32px;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#333}
+nav{background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:55px;height:55px}
+.logo h2{font-size:17px;color:#164b78}
+.links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.links a{text-decoration:none;color:#333;font-size:14px;font-weight:bold}
+.hero{background:linear-gradient(135deg,#164b78,#1677b8);color:#fff;text-align:center;padding:80px 6%}
+.hero h1{font-size:42px;margin-bottom:12px}
+.container{max-width:1100px;margin:auto;padding:65px 6%}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.box{background:#fff;padding:35px;border-radius:12px;box-shadow:0 5px 20px #00000010}
+.box h2{color:#164b78;margin-bottom:20px}
+.detail{margin-bottom:20px}
+.detail h3{color:#1677b8;margin-bottom:5px}
+.detail p{color:#555;line-height:1.7}
+.form input,
+.form textarea{
+width:100%;
+padding:13px;
+margin-bottom:15px;
+border:1px solid #d5e0e8;
+border-radius:6px;
+font-family:inherit;
+}
+.form textarea{height:140px;resize:vertical}
+button{
+background:#1677b8;
+color:#fff;
+border:0;
+padding:13px 25px;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+footer{background:#102f4b;color:#fff;text-align:center;padding:40px}
+footer p{color:#d3e0ea}
+@media(max-width:700px){
+nav{flex-direction:column;gap:12px}
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:32px}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            Shaheed Darshan Singh Pheruman Memorial College for Women
-        </div>
+<nav>
 
-        <ul class="nav-links">
-            <li><a href="sdspc.html">Home</a></li>
-            <li><a href="Read more.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="facilities.html">Facilities</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            
-        </ul>
-    </nav>
+<div class="logo">
+<img src="logoo.png" alt="College Logo">
+<h2>Shaheed Darshan Singh Pheruman<br>Memorial College for Women</h2>
+</div>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <h1>Contact Us</h1>
-        <p>We would love to hear from you</p>
-    </section>
+<div class="links">
+<a href="sdspc.html">Home</a>
+<a href="Read more.html">About</a>
+<a href="courses.html">Academics</a>
+<a href="facilities.html">Facilities</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+</nav>
 
-        <!-- Contact Information -->
-        <div class="contact-box">
-            <h2>Get In Touch</h2>
+<header class="hero">
+<h1>Contact Us</h1>
+<p>Get in touch with Shaheed Darshan Singh Pheruman Memorial College.</p>
+</header>
 
-            <div class="contact-info">
-                <h3>🏫 College Name</h3>
-                <p>
-                    Shaheed Darshan Singh Pheruman Memorial College for Women
-                </p>
-            </div>
+<section class="container">
 
-            <div class="contact-info">
-                <h3>📍 Address</h3>
-                <p>
-                    Rayya, Amritsar, Punjab, India
-                </p>
-            </div>
+<div class="grid">
 
-            <div class="contact-info">
-                <h3>☎ Phone</h3>
-                <p>
-                    7347064509
-                </p>
-            </div>
+<div class="box">
 
-            <div class="contact-info">
-                <h3>📱 Mobile</h3>
-                <p>
-                    9915670214
-                </p>
-            </div>
+<h2>College Information</h2>
 
-            <div class="contact-info">
-                <h3>📧 Email</h3>
-                <p>
-                    amndeep1425@gmail.com
-                </p>
-            </div>
-        </div>
+<div class="detail">
+<h3>📍 Address</h3>
+<p>
+Rayya, Amritsar,<br>
+Punjab, India
+</p>
+</div>
 
-        <!-- Contact Form -->
-        <div class="form-box">
-            <h2>Send Us a Message</h2>
+<div class="detail">
+<h3>☎ Phone</h3>
+<p>01853-222403</p>
+</div>
 
-            <form id="contactForm">
+<div class="detail">
+<h3>📱 Mobile</h3>
+<p>+91-9646847383</p>
+</div>
 
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                </div>
+<div class="detail">
+<h3>✉ Email</h3>
+<p>sdspmcfwr@gmail.com</p>
+</div>
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                </div>
+</div>
 
-                <div class="form-group">
-                    <label>Subject</label>
-                    <input type="text" name="subject" placeholder="Enter subject" required>
-                </div>
+<div class="box">
 
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Write your message" required></textarea>
-                </div>
+<h2>Admission Enquiry</h2>
 
-                <button type="submit" class="btn">
-                    Send Message
-                </button>
+<form class="form">
 
-                <p id="formStatus" style="margin-top:15px;"></p>
+<input type="text" placeholder="Your Name">
 
-            </form>
-        </div>
+<input type="email" placeholder="Your Email">
 
-    </section>
+<input type="tel" placeholder="Phone Number">
 
-    <!-- Location -->
-    <section class="map-section">
-        <h2>Our Location</h2>
+<input type="text" placeholder="Course / Programme">
 
-        <div class="map-box">
-            <p>
-                Shaheed Darshan Singh Pheruman Memorial College for Women,
-                Rayya, Amritsar, Punjab
-            </p>
+<textarea placeholder="Your Message"></textarea>
 
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=Shaheed+Darshan+Singh+Pheruman+Memorial+College+for+Women+Rayya+Amritsar"
-                target="_blank"
-                class="map-btn">
-                View on Google Maps
-            </a>
-        </div>
-    </section>
+<button type="button">
+Send Enquiry
+</button>
 
-    <!-- Footer -->
-    <footer>
-        <p>
-            © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women.
-            All Rights Reserved.
-        </p>
-    </footer>
+</form>
 
+</div>
 
-    <!-- Google Sheet Connection -->
-    <script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+</div>
 
-    e.preventDefault();
+</section>
 
-    const form = e.target;
-    const status = document.getElementById("formStatus");
+<footer>
+<p>
+© 2026 Shaheed Darshan Singh Pheruman Memorial College.
+All Rights Reserved.
+</p>
+</footer>
 
-    const data = {
-        name: form.name.value,
-        email: form.email.value,
-        subject: form.subject.value,
-        message: form.message.value
-    };
-
-    status.textContent = "Sending...";
-
-    fetch("https://script.google.com/macros/s/AKfycbyGZMpMTcS84mzMuA13g9yfqizLUuHJtZLkVeB5p3ZoxPW5zharsEFfh1Kkjf7N_QJS/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
-    .then(() => {
-        status.textContent = "Message sent successfully!";
-        form.reset();
-    })
-    .catch(() => {
-        status.textContent = "Something went wrong. Please try again.";
-    });
-
-});
-</script>
+</body>
+</html>
