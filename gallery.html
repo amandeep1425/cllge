@@ -3,92 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gallery | SDSP Memorial College</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f7fb}
-nav{background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{width:55px;height:55px}
-.logo h2{font-size:17px;color:#164b78}
-.links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.links a{text-decoration:none;color:#333;font-size:14px;font-weight:bold}
-.hero{background:linear-gradient(135deg,#164b78,#1677b8);color:#fff;text-align:center;padding:75px 6%}
-.hero h1{font-size:42px;margin-bottom:12px}
-.container{max-width:1150px;margin:auto;padding:65px 6%}
-.category{margin-bottom:55px}
-.category h2{color:#164b78;text-align:center;margin-bottom:25px}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.gallery-grid img{width:100%;height:210px;object-fit:cover;border-radius:10px;cursor:pointer;transition:.3s}
-.gallery-grid img:hover{transform:scale(1.03)}
-footer{background:#102f4b;color:#fff;text-align:center;padding:40px}
-footer p{color:#d3e0ea}
-@media(max-width:850px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){nav{flex-direction:column;gap:12px}.gallery-grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
+<nav class="navbar"><div class="container nav-inner">
+<a href="sdspc.html" class="brand"><img src="logoo.png"><div class="brand-text">Shaheed Darshan Singh Pheruman<span>Memorial College for Women</span></div></a>
+<button class="menu-btn">☰</button>
+<ul class="nav-links"><li><a href="sdspc.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="courses.html">Courses</a></li><li><a href="departments.html">Departments</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="student-corner.html">Student Corner</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+</div></nav>
 
-<div class="logo">
-<img src="logoo.png" alt="College Logo">
-<h2>Shaheed Darshan Singh Pheruman<br>Memorial College for Women</h2>
-</div>
+<section class="page-hero"><div class="container page-head"><div class="eyebrow">Campus Life</div><h1>Gallery</h1><p>A glimpse of the college campus and student environment.</p></div></section>
 
-<div class="links">
-<a href="sdspc.html">Home</a>
-<a href="Read more.html">About</a>
-<a href="courses.html">Academics</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-</div>
-
-</nav>
-
-<header class="hero">
-<h1>College Gallery</h1>
-<p>Campus, classroom and student activity moments.</p>
-</header>
-
-<section class="container">
-
-<div class="category">
-<h2>Campus</h2>
+<section class="section">
+<div class="container">
 
 <div class="gallery-grid">
-<img src="gate.jpeg" alt="College Gate">
-<img src="s.jpeg" alt="College Campus">
-</div>
+
+<div class="gallery-item"><img src="gate.jpeg" alt="College Gate"></div>
+<div class="gallery-item"><img src="clss.jpeg" alt="Classroom"></div>
+<div class="gallery-item"><img src="library.jpg" alt="Library"></div>
+<div class="gallery-item"><img src="rec.jpeg" alt="Campus Activity"></div>
+<div class="gallery-item"><img src="s.jpeg" alt="College"></div>
+<div class="gallery-item"><img src="gate.jpeg" alt="Campus"></div>
+
 </div>
 
-<div class="category">
-<h2>Academic Spaces</h2>
-
-<div class="gallery-grid">
-<img src="clss.jpeg" alt="Classroom">
-<img src="library.jpg" alt="Library">
 </div>
-</div>
-
-<div class="category">
-<h2>Activities</h2>
-
-<div class="gallery-grid">
-<img src="rec.jpeg" alt="College Activity">
-<img src="gate.jpeg" alt="Campus">
-</div>
-</div>
-
 </section>
 
-<footer>
-<p>© 2026 Shaheed Darshan Singh Pheruman Memorial College. All Rights Reserved.</p>
-</footer>
+<div class="lightbox">
+<span class="lightbox-close">&times;</span>
+<img src="" alt="Gallery Preview">
+</div>
 
+<footer class="footer"><div class="container footer-bottom">© 2026 SDSP Memorial College for Women</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
