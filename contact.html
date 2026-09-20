@@ -3,148 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Contact | SDSP Memorial College</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#333}
-nav{background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{width:55px;height:55px}
-.logo h2{font-size:17px;color:#164b78}
-.links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.links a{text-decoration:none;color:#333;font-size:14px;font-weight:bold}
-.hero{background:linear-gradient(135deg,#164b78,#1677b8);color:#fff;text-align:center;padding:80px 6%}
-.hero h1{font-size:42px;margin-bottom:12px}
-.container{max-width:1100px;margin:auto;padding:65px 6%}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.box{background:#fff;padding:35px;border-radius:12px;box-shadow:0 5px 20px #00000010}
-.box h2{color:#164b78;margin-bottom:20px}
-.detail{margin-bottom:20px}
-.detail h3{color:#1677b8;margin-bottom:5px}
-.detail p{color:#555;line-height:1.7}
-.form input,
-.form textarea{
-width:100%;
-padding:13px;
-margin-bottom:15px;
-border:1px solid #d5e0e8;
-border-radius:6px;
-font-family:inherit;
-}
-.form textarea{height:140px;resize:vertical}
-button{
-background:#1677b8;
-color:#fff;
-border:0;
-padding:13px 25px;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer;
-}
-footer{background:#102f4b;color:#fff;text-align:center;padding:40px}
-footer p{color:#d3e0ea}
-@media(max-width:700px){
-nav{flex-direction:column;gap:12px}
-.grid{grid-template-columns:1fr}
-.hero h1{font-size:32px}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
+<nav class="navbar"><div class="container nav-inner">
+<a href="sdspc.html" class="brand"><img src="logoo.png"><div class="brand-text">Shaheed Darshan Singh Pheruman<span>Memorial College for Women</span></div></a>
+<button class="menu-btn">☰</button>
+<ul class="nav-links"><li><a href="sdspc.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="courses.html">Courses</a></li><li><a href="departments.html">Departments</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="student-corner.html">Student Corner</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+</div></nav>
 
-<div class="logo">
-<img src="logoo.png" alt="College Logo">
-<h2>Shaheed Darshan Singh Pheruman<br>Memorial College for Women</h2>
-</div>
+<section class="page-hero"><div class="container page-head"><div class="eyebrow">Get In Touch</div><h1>Contact Us</h1><p>Contact the college for admissions and general enquiries.</p></div></section>
 
-<div class="links">
-<a href="sdspc.html">Home</a>
-<a href="Read more.html">About</a>
-<a href="courses.html">Academics</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-</div>
+<section class="section">
+<div class="container contact-grid">
 
-</nav>
+<div class="content-box">
+<h2>College Address</h2>
+<p><strong>Shaheed Darshan Singh Pheruman Memorial College for Women</strong></p>
+<p>Rayya, Amritsar, Punjab</p>
 
-<header class="hero">
-<h1>Contact Us</h1>
-<p>Get in touch with Shaheed Darshan Singh Pheruman Memorial College.</p>
-</header>
-
-<section class="container">
-
-<div class="grid">
-
-<div class="box">
-
-<h2>College Information</h2>
-
-<div class="detail">
-<h3>📍 Address</h3>
-<p>
-Rayya, Amritsar,<br>
-Punjab, India
-</p>
-</div>
-
-<div class="detail">
-<h3>☎ Phone</h3>
+<h3>Telephone</h3>
 <p>01853-222403</p>
-</div>
 
-<div class="detail">
-<h3>📱 Mobile</h3>
+<h3>Mobile</h3>
 <p>+91-9646847383</p>
+
+<h3>College Location</h3>
+<p>G.T. Road, Rayya area, Amritsar district, Punjab.</p>
 </div>
 
-<div class="detail">
-<h3>✉ Email</h3>
-<p>sdspmcfwr@gmail.com</p>
+<div class="card">
+<h2>Send An Enquiry</h2>
+
+<form id="contactForm">
+
+<div class="form-group">
+<label>Name</label>
+<input type="text" required>
 </div>
 
+<div class="form-group">
+<label>Email</label>
+<input type="email" required>
 </div>
 
-<div class="box">
+<div class="form-group">
+<label>Phone</label>
+<input type="tel">
+</div>
 
-<h2>Admission Enquiry</h2>
+<div class="form-group">
+<label>Message</label>
+<textarea required></textarea>
+</div>
 
-<form class="form">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<input type="tel" placeholder="Phone Number">
-
-<input type="text" placeholder="Course / Programme">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button type="button">
-Send Enquiry
-</button>
+<button type="submit" class="btn btn-blue">Submit Enquiry</button>
 
 </form>
-
 </div>
 
 </div>
-
 </section>
 
-<footer>
-<p>
-© 2026 Shaheed Darshan Singh Pheruman Memorial College.
-All Rights Reserved.
-</p>
-</footer>
-
+<footer class="footer"><div class="container footer-bottom">© 2026 SDSP Memorial College for Women</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
