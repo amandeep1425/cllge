@@ -1,0 +1,159 @@
+/* ================================
+   DEPARTMENT PAGE
+================================ */
+
+.department-panel {
+  display: none;
+  animation: fadeDepartment 0.35s ease;
+}
+
+.department-panel.active {
+  display: block;
+}
+
+.department-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.department-buttons .filter-btn {
+  cursor: pointer;
+}
+
+@keyframes fadeDepartment {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Notice cards */
+
+.notice-list {
+  display: grid;
+  gap: 20px;
+}
+
+.notice-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 25px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.notice-date {
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b3d91;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.notice-card h3 {
+  margin-top: 0;
+}
+
+/* Download cards */
+
+.download-card {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.download-icon {
+  font-size: 35px;
+}
+
+.download-card h3 {
+  margin-top: 0;
+}
+
+/* Tables */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+  background: #0b3d91;
+  color: white;
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: #0b3d91;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.content-box {
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 18px;
+  background: #f5f8fc;
+}
+
+.content-box li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .notice-card {
+    flex-direction: column;
+  }
+
+  .download-card {
+    flex-direction: column;
+  }
+
+  .department-buttons {
+    flex-direction: column;
+  }
+
+  .department-buttons .filter-btn {
+    width: 100%;
+  }
+
+  .data-table {
+    min-width: 650px;
+  }
+}
