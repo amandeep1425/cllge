@@ -3,137 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About | SDSP Memorial College for Women</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#333}
-nav{background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{width:55px;height:55px;object-fit:contain}
-.logo h2{font-size:17px;color:#164b78;line-height:1.2}
-.nav-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.nav-links a{text-decoration:none;color:#333;font-weight:600;font-size:14px}
-.nav-links a:hover{color:#1677b8}
-.hero{background:linear-gradient(135deg,#164b78,#1677b8);color:#fff;text-align:center;padding:80px 6%}
-.hero h1{font-size:44px;margin-bottom:15px}
-.hero p{line-height:1.7}
-.container{max-width:1100px;margin:auto;padding:70px 6%}
-.white{background:#fff}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.grid img{width:100%;height:370px;object-fit:cover;border-radius:14px}
-h2{color:#164b78;font-size:32px;margin-bottom:18px}
-p{line-height:1.8;color:#555;margin-bottom:15px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
-.card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 5px 20px #00000010}
-.card h3{color:#164b78;margin-bottom:12px}
-footer{background:#102f4b;color:#fff;padding:45px 7%;text-align:center}
-footer p{color:#d3e0ea}
-@media(max-width:750px){
-nav{flex-direction:column;gap:12px}
-.grid,.cards{grid-template-columns:1fr}
-.hero h1{font-size:32px}
-}
-</style>
+<title>About College | SDSP Memorial College</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-<div class="logo">
-<img src="logoo.png" alt="College Logo">
-<h2>Shaheed Darshan Singh Pheruman<br>Memorial College for Women</h2>
-</div>
-
-<div class="nav-links">
-<a href="sdspc.html">Home</a>
-<a href="Read more.html">About</a>
-<a href="courses.html">Academics</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+<nav class="navbar">
+<div class="container nav-inner">
+<a href="sdspc.html" class="brand">
+<img src="logoo.png">
+<div class="brand-text">Shaheed Darshan Singh Pheruman
+<span>Memorial College for Women</span></div>
+</a>
+<button class="menu-btn">☰</button>
+<ul class="nav-links">
+<li><a href="sdspc.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="courses.html">Courses</a></li>
+<li><a href="departments.html">Departments</a></li>
+<li><a href="facilities.html">Facilities</a></li>
+<li><a href="student-corner.html">Student Corner</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
 </div>
 </nav>
 
-<header class="hero">
-<h1>About Our College</h1>
-<p>Shaheed Darshan Singh Pheruman Memorial College for Women</p>
-</header>
-
-<section class="container white">
-
-<div class="grid">
-
-<div>
-<img src="s.jpeg" alt="College Campus">
+<section class="page-hero">
+<div class="container page-head">
+<div class="eyebrow">About Us</div>
+<h1>About The College</h1>
+<p>Our history, vision and commitment to women's education.</p>
 </div>
-
-<div>
-<h2>Education With Purpose</h2>
-
-<p>
-Shaheed Darshan Singh Pheruman Memorial College for Women
-is located at Rayya, Amritsar, Punjab.
-</p>
-
-<p>
-The college focuses on providing quality education and
-creating opportunities for women to develop academically,
-personally and professionally.
-</p>
-
-<p>
-Along with academic programmes, students can participate
-in different activities and use campus facilities that
-support their learning and overall development.
-</p>
-</div>
-
-</div>
-
 </section>
 
-<section class="container">
+<section class="section">
+<div class="container about-grid">
 
-<h2 style="text-align:center;">What We Offer</h2>
+<div class="about-image">
+<img src="s.jpeg" alt="College">
+</div>
 
-<div class="cards">
+<div class="about-content">
+<div class="eyebrow">Since 1974</div>
+<h2>Shaheed Darshan Singh Pheruman Memorial College for Women</h2>
 
-<div class="card">
-<h3>Academic Learning</h3>
 <p>
-A range of academic programmes and computer-related
-courses for students.
+Established in 1974, the college is situated at Rayya in Amritsar
+district of Punjab. The institution was established to provide higher
+education opportunities for women, particularly in the surrounding
+rural area.
 </p>
-</div>
 
-<div class="card">
-<h3>Student Activities</h3>
 <p>
-NSS, NCC, Red Ribbon Club and other activities
-support student participation.
+The college is affiliated with Guru Nanak Dev University and offers
+undergraduate and postgraduate education along with career-oriented
+and diploma programmes.
 </p>
+
+<ul class="check-list">
+<li>Women's higher education</li>
+<li>Value-based learning</li>
+<li>Academic and personality development</li>
+<li>Career and skill-oriented opportunities</li>
+</ul>
 </div>
 
-<div class="card">
-<h3>Campus Facilities</h3>
-<p>
-Learning resources and campus facilities support
-students during their academic journey.
-</p>
 </div>
-
-</div>
-
 </section>
 
-<footer>
-<p>
-© 2026 Shaheed Darshan Singh Pheruman Memorial College.
-All Rights Reserved.
-</p>
+<section class="section section-light">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">Campus</div>
+<h2>A Place For Learning & Growth</h2>
+</div>
+
+<div class="grid grid-3">
+<div class="card"><h3>10-Acre Campus</h3><p>The college campus provides space for academic and student activities.</p></div>
+<div class="card"><h3>Academic Infrastructure</h3><p>Classrooms and specialised laboratories support teaching and learning.</p></div>
+<div class="card"><h3>Student Development</h3><p>Students can participate in cultural, sports, NSS, NCC and other activities.</p></div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container footer-bottom">© 2026 SDSP Memorial College for Women</div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
