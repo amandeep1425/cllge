@@ -323,80 +323,6 @@ img{
 .section-head p{
     color:var(--text);
 }
-/* ================= FACULTY CARDS ================= */
-
-.faculty-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-    margin-top:22px;
-}
-
-.faculty-card{
-    position:relative;
-    z-index:2;
-    background:var(--light);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:20px;
-    transition:.25s ease;
-}
-
-.faculty-card:hover{
-    transform:translateY(-3px);
-    box-shadow:var(--shadow);
-    border-color:#cbd8e6;
-}
-
-.faculty-card h4{
-    color:var(--blue);
-    font-size:17px;
-    margin-bottom:5px;
-}
-
-.faculty-card span{
-    display:block;
-    color:var(--text);
-    font-size:14px;
-    line-height:1.5;
-}
-
-.department-card{
-    margin-bottom:28px;
-}
-
-.department-card:last-child{
-    margin-bottom:0;
-}
-
-.department-card h2{
-    position:relative;
-    z-index:2;
-    color:var(--blue);
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.department-card > p{
-    position:relative;
-    z-index:2;
-    margin-bottom:10px;
-}
-
-
-/* MOBILE FACULTY */
-
-@media(max-width:750px){
-
-    .faculty-grid{
-        grid-template-columns:1fr;
-    }
-
-    .department-card h2{
-        font-size:24px;
-    }
-
-}
 
 /* ================= PAGE HERO ================= */
 
@@ -620,140 +546,30 @@ img{
 .facility-card .card-body{
     padding:24px;
 }
-/* ================================
-   DEPARTMENT & FACULTY SECTION
-================================ */
 
-.departments-section {
-    padding: 70px 0;
-    background: #f7f9fc;
+/* ================= DEPARTMENTS ================= */
+
+.department-card{
+    position:relative;
+    overflow:hidden;
 }
 
-.departments-section .section-head {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 45px;
+.department-card::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    right:-35px;
+    bottom:-35px;
+    border-radius:50%;
+    background:var(--light-blue);
 }
 
-.departments-section .section-head h2 {
-    color: #073b6f;
-    font-size: 34px;
-    margin-bottom: 10px;
+.department-card h3{
+    position:relative;
+    z-index:1;
 }
 
-.departments-section .section-head p {
-    color: #4c5968;
-    font-size: 16px;
-}
-
-/* Department box */
-.department-box {
-    background: #ffffff;
-    border: 1px solid #e4e9ef;
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 35px;
-    box-shadow: 0 12px 35px rgba(7, 59, 111, 0.10);
-}
-
-.department-box h3 {
-    color: #073b6f;
-    font-size: 25px;
-    margin-bottom: 12px;
-}
-
-.department-box > p {
-    color: #4c5968;
-    margin-bottom: 28px;
-    line-height: 1.7;
-}
-
-/* Faculty heading */
-.faculty-title {
-    color: #0b5aa0;
-    font-size: 21px;
-    margin-bottom: 18px;
-}
-
-/* Faculty grid */
-.faculty-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-/* Faculty card */
-.faculty-card {
-    background: #ffffff;
-    border: 1px solid #e4e9ef;
-    border-radius: 14px;
-    padding: 24px;
-    transition: all 0.25s ease;
-    box-shadow: 0 8px 25px rgba(7, 59, 111, 0.07);
-}
-
-.faculty-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(7, 59, 111, 0.14);
-}
-
-/* Icon */
-.faculty-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #eef6ff;
-    color: #073b6f;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 17px;
-    font-weight: 700;
-
-    margin-bottom: 17px;
-}
-
-/* Teacher name */
-.faculty-card h4 {
-    color: #073b6f;
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-/* Qualification */
-.faculty-card p {
-    color: #4c5968;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-    .faculty-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .departments-section {
-        padding: 50px 0;
-    }
-
-    .department-box {
-        padding: 22px;
-    }
-
-    .departments-section .section-head h2 {
-        font-size: 28px;
-    }
-
-    .faculty-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* ================= CONTENT ================= */
 
 .content-box{
