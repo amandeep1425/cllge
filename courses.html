@@ -3,135 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Courses | SDSP Memorial College</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#333}
-nav{background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{width:55px;height:55px}
-.logo h2{font-size:17px;color:#164b78}
-.nav-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.nav-links a{color:#333;text-decoration:none;font-size:14px;font-weight:bold}
-.hero{background:linear-gradient(135deg,#164b78,#1677b8);color:#fff;text-align:center;padding:80px 5%}
-.hero h1{font-size:42px;margin-bottom:12px}
-.container{max-width:1150px;margin:auto;padding:65px 6%}
-.section-title{text-align:center;margin-bottom:40px}
-.section-title h2{font-size:34px;color:#164b78}
-.section-title p{color:#666;margin-top:10px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{background:#fff;padding:28px 22px;border-radius:12px;border:1px solid #e1eaf1;transition:.3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 10px 25px #0002}
-.card span{font-size:30px}
-.card h3{color:#164b78;margin:15px 0 10px}
-.card p{font-size:14px;line-height:1.7;color:#666}
-.note{margin-top:45px;background:#fff;padding:30px;border-left:5px solid #1677b8;border-radius:8px}
-.note h3{color:#164b78;margin-bottom:10px}
-.note p{line-height:1.7;color:#555}
-footer{background:#102f4b;color:#fff;text-align:center;padding:40px}
-footer p{color:#d3e0ea}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:650px){nav{flex-direction:column;gap:12px}.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
-<div class="logo">
-<img src="logoo.png" alt="College Logo">
-<h2>Shaheed Darshan Singh Pheruman<br>Memorial College for Women</h2>
-</div>
-
-<div class="nav-links">
-<a href="sdspc.html">Home</a>
-<a href="Read more.html">About</a>
-<a href="courses.html">Academics</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+<nav class="navbar">
+<div class="container nav-inner">
+<a href="sdspc.html" class="brand"><img src="logoo.png"><div class="brand-text">Shaheed Darshan Singh Pheruman<span>Memorial College for Women</span></div></a>
+<button class="menu-btn">☰</button>
+<ul class="nav-links">
+<li><a href="sdspc.html">Home</a></li><li><a href="about.html">About</a></li>
+<li><a href="courses.html">Courses</a></li><li><a href="departments.html">Departments</a></li>
+<li><a href="facilities.html">Facilities</a></li><li><a href="student-corner.html">Student Corner</a></li>
+<li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li>
+</ul>
 </div>
 </nav>
 
-<header class="hero">
-<h1>Academic Programmes</h1>
-<p>Explore the programmes offered through the college.</p>
-</header>
-
-<section class="container">
-
-<div class="section-title">
-<h2>Our Courses</h2>
-<p>Academic and skill-oriented programmes</p>
+<section class="page-hero">
+<div class="container page-head">
+<div class="eyebrow">Academics</div>
+<h1>Courses & Programmes</h1>
+<p>Explore undergraduate, postgraduate, diploma and add-on learning opportunities.</p>
 </div>
-
-<div class="grid">
-
-<div class="card">
-<span>💻</span>
-<h3>M.Sc. Computer Science</h3>
-<p>Postgraduate programme in Computer Science.</p>
-</div>
-
-<div class="card">
-<span>🖥️</span>
-<h3>BCA</h3>
-<p>Undergraduate programme focused on Computer Applications.</p>
-</div>
-
-<div class="card">
-<span>📖</span>
-<h3>B.A.</h3>
-<p>Undergraduate programme in Arts and related areas.</p>
-</div>
-
-<div class="card">
-<span>📊</span>
-<h3>B.Sc. Economics</h3>
-<p>Undergraduate programme focused on Economics.</p>
-</div>
-
-<div class="card">
-<span>💼</span>
-<h3>B.Com.</h3>
-<p>Undergraduate programme in Commerce and business studies.</p>
-</div>
-
-<div class="card">
-<span>⌨️</span>
-<h3>PGDCA</h3>
-<p>Postgraduate Diploma in Computer Applications.</p>
-</div>
-
-<div class="card">
-<span>🖱️</span>
-<h3>DCA</h3>
-<p>Diploma programme in Computer Applications.</p>
-</div>
-
-<div class="card">
-<span>🧵</span>
-<h3>Stitching & Tailoring</h3>
-<p>Skill-oriented diploma programme in Stitching and Tailoring.</p>
-</div>
-
-</div>
-
-<div class="note">
-<h3>Need Admission Information?</h3>
-<p>
-For current eligibility, admission dates, fee details and
-programme-specific requirements, contact the college directly.
-</p>
-</div>
-
 </section>
 
-<footer>
-<p>© 2026 Shaheed Darshan Singh Pheruman Memorial College. All Rights Reserved.</p>
-</footer>
+<section class="section">
+<div class="container">
 
+<div class="filters">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="ug">UG</button>
+<button class="filter-btn" data-filter="pg">PG</button>
+<button class="filter-btn" data-filter="diploma">Diploma</button>
+</div>
+
+<div class="grid grid-3">
+
+<div class="course-card" data-course="pg"><span class="tag">PG</span><h3>M.Sc. Computer Science</h3><p>Postgraduate programme in computer science.</p></div>
+
+<div class="course-card" data-course="ug"><span class="tag">UG</span><h3>BCA</h3><p>Bachelor of Computer Applications.</p></div>
+
+<div class="course-card" data-course="ug"><span class="tag">UG</span><h3>B.A.</h3><p>Bachelor of Arts programme.</p></div>
+
+<div class="course-card" data-course="ug"><span class="tag">UG</span><h3>B.Sc. Economics</h3><p>Undergraduate programme in economics.</p></div>
+
+<div class="course-card" data-course="ug"><span class="tag">UG</span><h3>B.Com.</h3><p>Bachelor of Commerce.</p></div>
+
+<div class="course-card" data-course="diploma"><span class="tag">Diploma</span><h3>PGDCA</h3><p>Post Graduate Diploma in Computer Applications.</p></div>
+
+<div class="course-card" data-course="diploma"><span class="tag">Diploma</span><h3>DCA</h3><p>Diploma in Computer Applications.</p></div>
+
+<div class="course-card" data-course="diploma"><span class="tag">Diploma</span><h3>Stitching & Tailoring</h3><p>Vocational diploma programme.</p></div>
+
+<div class="course-card" data-course="diploma"><span class="tag">Diploma</span><h3>Cosmetology</h3><p>Vocational diploma programme.</p></div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section section-light">
+<div class="container content-box">
+<h2>Add-On Courses</h2>
+<p>Career-oriented learning opportunities include areas such as Communication Skills, Functional English, Computer Application and Computer Maintenance.</p>
+</div>
+</section>
+
+<footer class="footer"><div class="container footer-bottom">© 2026 SDSP Memorial College for Women</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
