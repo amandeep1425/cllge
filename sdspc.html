@@ -3,447 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Shaheed Darshan Singh Pheruman Memorial College</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="topbar">
-    <div class="container">
-        <span>Shaheed Darshan Singh Pheruman Memorial College for Women</span>
-        <span>Rayya, Amritsar, Punjab</span>
-    </div>
-</div>
+<!-- ================= NAVBAR ================= -->
 
-<nav class="navbar">
-    <div class="container nav-inner">
+<header class="navbar">
+    <div class="container nav-container">
 
-        <a href="sdspc.html" class="brand">
+        <a href="sdspc.html" class="logo">
             <img src="logoo.png" alt="College Logo">
-            <div class="brand-text">
-                Shaheed Darshan Singh Pheruman
-                <span>Memorial College for Women</span>
+            <div>
+                <strong>SDSP Memorial College</strong>
+                <span>For Women</span>
             </div>
         </a>
 
-        <button class="menu-btn">☰</button>
-
-        <ul class="nav-links">
-            <li><a href="sdspc.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="departments.html">Departments</a></li>
-            <li><a href="facilities.html">Facilities</a></li>
-            <li><a href="student-corner.html">Student Corner</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <nav class="nav-links">
+            <a href="sdspc.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="departments.html">Departments</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
     </div>
-</nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <div class="hero-slide active" style="background-image:url('gate.jpeg')">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="eyebrow">Empowering Women Through Education</div>
-                <h1>Shaheed Darshan Singh Pheruman Memorial College</h1>
+    <div class="hero-slider">
+
+        <div class="hero-slide active">
+            <img src="gate.jpeg" alt="College Campus">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="hero-small">WELCOME TO</p>
+
+                <h1>
+                    Shaheed Darshan Singh
+                    Pheruman Memorial College
+                </h1>
+
                 <p>
-                    Quality education, confidence, values and opportunities
-                    for the development of young women.
+                    Empowering Women Through Quality Education
                 </p>
+
                 <div class="hero-buttons">
-                    <a href="courses.html" class="btn btn-primary">Explore Courses</a>
-                    <a href="about.html" class="btn btn-outline">About College</a>
+                    <a href="courses.html" class="btn">
+                        Explore Courses
+                    </a>
+
+                    <a href="about.html" class="btn btn-outline">
+                        Discover Our College
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="hero-slide" style="background-image:url('clss.jpeg')">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="eyebrow">Learning • Values • Development</div>
-                <h1>Education That Builds Confidence</h1>
-                <p>
-                    A learning environment focused on academic,
-                    personal and social development.
-                </p>
-                <div class="hero-buttons">
-                    <a href="student-corner.html" class="btn btn-primary">Student Corner</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="hero-slide" style="background-image:url('library.jpg')">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="eyebrow">Knowledge & Learning</div>
-                <h1>Learn. Grow. Lead.</h1>
+        <div class="hero-slide">
+            <img src="clss.jpeg" alt="College Classroom">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="hero-small">LEARN • GROW • ACHIEVE</p>
+
+                <h1>
+                    Education That Builds Confidence
+                </h1>
+
                 <p>
-                    Academic learning supported by library,
-                    laboratories and student-development activities.
+                    Creating opportunities for young women
+                    through knowledge and skills.
                 </p>
             </div>
         </div>
-    </div>
 
-    <div class="hero-slide" style="background-image:url('rec.jpeg')">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <div class="eyebrow">Campus Life</div>
-                <h1>More Than Classroom Learning</h1>
+
+        <div class="hero-slide">
+            <img src="library.jpg" alt="College Library">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="hero-small">KNOWLEDGE IS POWER</p>
+
+                <h1>
+                    A Place To Learn And Grow
+                </h1>
+
                 <p>
-                    Opportunities for cultural, sports, NSS, NCC
-                    and other student activities.
+                    A supportive academic environment
+                    for students.
                 </p>
             </div>
         </div>
+
+
+        <div class="hero-slide">
+            <img src="rec.jpeg" alt="College Activities">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="hero-small">BEYOND THE CLASSROOM</p>
+
+                <h1>
+                    Learn. Participate. Succeed.
+                </h1>
+
+                <p>
+                    Encouraging academic, cultural and
+                    co-curricular development.
+                </p>
+            </div>
+        </div>
+
     </div>
+
+
+    <!-- Slider Buttons -->
+
+    <button class="slider-btn prev" onclick="changeSlide(-1)">
+        &#10094;
+    </button>
+
+    <button class="slider-btn next" onclick="changeSlide(1)">
+        &#10095;
+    </button>
+
+
+    <!-- Slider Dots -->
 
     <div class="slider-dots">
-        <button class="slider-dot active"></button>
-        <button class="slider-dot"></button>
-        <button class="slider-dot"></button>
-        <button class="slider-dot"></button>
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
 
 </section>
 
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat">
-                <strong>1974</strong>
-                Established
-            </div>
-            <div class="stat">
-                <strong>10</strong>
-                Acre Campus
-            </div>
-            <div class="stat">
-                <strong>15K+</strong>
-                Library Books
-            </div>
-            <div class="stat">
-                <strong>38</strong>
-                Classrooms
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="section">
-    <div class="container about-grid reveal">
+<!-- ================= WELCOME ================= -->
 
-        <div class="about-image">
+<section class="home-welcome">
+
+    <div class="container welcome-content">
+
+        <div class="welcome-image">
             <img src="s.jpeg" alt="College Campus">
         </div>
 
-        <div class="about-content">
-            <div class="eyebrow">About Our College</div>
-            <h2>Building Knowledge, Confidence & Opportunities</h2>
+        <div class="welcome-text">
+
+            <span class="section-label">
+                WELCOME
+            </span>
+
+            <h2>
+                Welcome to SDSP Memorial College
+            </h2>
 
             <p>
-                Shaheed Darshan Singh Pheruman Memorial College for Women
-                is a women's college located at Rayya in Amritsar district.
-                Established in 1974, the institution is committed to
-                providing higher education and opportunities for women.
-            </p>
-
-            <ul class="check-list">
-                <li>Undergraduate and postgraduate education</li>
-                <li>Academic and career-oriented learning</li>
-                <li>Student development and co-curricular activities</li>
-                <li>Library, laboratories and campus facilities</li>
-            </ul>
-
-            <a href="about.html" class="btn btn-blue">Read More</a>
-        </div>
-
-    </div>
-</section>
-
-<section class="section section-light">
-    <div class="container">
-
-        <div class="section-head">
-            <div class="eyebrow">Why Choose Us</div>
-            <h2>A Supportive Environment For Learning</h2>
-        </div>
-
-        <div class="grid grid-4">
-
-            <div class="card reveal">
-                <div class="icon-box">🎓</div>
-                <h3>Quality Education</h3>
-                <p>Academic programmes designed to develop knowledge and skills.</p>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon-box">👩‍🏫</div>
-                <h3>Academic Guidance</h3>
-                <p>Students receive academic support and guidance throughout their studies.</p>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon-box">📚</div>
-                <h3>Learning Facilities</h3>
-                <p>Library, laboratories and other learning resources support students.</p>
-            </div>
-
-            <div class="card reveal">
-                <div class="icon-box">🌱</div>
-                <h3>Student Development</h3>
-                <p>Activities encourage confidence, leadership and personality development.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-
-        <div class="section-head">
-            <div class="eyebrow">Academic Programmes</div>
-            <h2>Explore Our Courses</h2>
-        </div>
-
-        <div class="grid grid-3">
-
-            <div class="course-card reveal">
-                <span class="tag">UG</span>
-                <h3>Bachelor of Computer Applications</h3>
-                <p>Computer applications education with practical learning.</p>
-            </div>
-
-            <div class="course-card reveal">
-                <span class="tag">UG</span>
-                <h3>B.A.</h3>
-                <p>Broad-based undergraduate education in humanities and social sciences.</p>
-            </div>
-
-            <div class="course-card reveal">
-                <span class="tag">UG</span>
-                <h3>B.Com.</h3>
-                <p>Undergraduate commerce education and business-oriented learning.</p>
-            </div>
-
-            <div class="course-card reveal">
-                <span class="tag">PG</span>
-                <h3>M.Sc. Computer Science</h3>
-                <p>Postgraduate study in computer science.</p>
-            </div>
-
-            <div class="course-card reveal">
-                <span class="tag">UG</span>
-                <h3>B.Sc. Economics</h3>
-                <p>Undergraduate education in economics.</p>
-            </div>
-
-            <div class="course-card reveal">
-                <span class="tag">Diploma</span>
-                <h3>Career-Oriented Diplomas</h3>
-                <p>Options including PGDCA, DCA and vocational diploma programmes.</p>
-            </div>
-
-        </div>
-
-        <div style="text-align:center;margin-top:35px;">
-            <a href="courses.html" class="btn btn-blue">View All Courses</a>
-        </div>
-
-    </div>
-</section>
-
-<section class="section section-light">
-    <div class="container">
-
-        <div class="section-head">
-            <div class="eyebrow">Academic Departments</div>
-            <h2>Our Departments</h2>
-        </div>
-
-        <div class="grid grid-3">
-
-            <div class="card department-card">
-                <h3>Computer Science & Application</h3>
-                <p>Computer science and application-oriented programmes.</p>
-            </div>
-
-            <div class="card department-card">
-                <h3>Social Sciences</h3>
-                <p>Subjects and programmes related to social sciences.</p>
-            </div>
-
-            <div class="card department-card">
-                <h3>Languages</h3>
-                <p>Language and literature education.</p>
-            </div>
-
-            <div class="card department-card">
-                <h3>Commerce & Management</h3>
-                <p>Commerce and management-oriented education.</p>
-            </div>
-
-            <div class="card department-card">
-                <h3>Music</h3>
-                <p>Academic and practical learning in music.</p>
-            </div>
-
-            <div class="card department-card">
-                <h3>Physical Education</h3>
-                <p>Sports, physical fitness and student participation.</p>
-            </div>
-
-        </div>
-
-        <div style="text-align:center;margin-top:35px;">
-            <a href="departments.html" class="btn btn-blue">View Departments</a>
-        </div>
-
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-
-        <div class="section-head">
-            <div class="eyebrow">Campus</div>
-            <h2>Facilities For Students</h2>
-        </div>
-
-        <div class="grid grid-3">
-
-            <div class="card facility-card">
-                <img src="library.jpg" alt="Library">
-                <div class="card-body">
-                    <h3>Library</h3>
-                    <p>Library resources supporting academic study and reading.</p>
-                </div>
-            </div>
-
-            <div class="card facility-card">
-                <img src="clss.jpeg" alt="Classrooms">
-                <div class="card-body">
-                    <h3>Classrooms</h3>
-                    <p>Academic spaces for classroom teaching and learning.</p>
-                </div>
-            </div>
-
-            <div class="card facility-card">
-                <img src="rec.jpeg" alt="Campus Activities">
-                <div class="card-body">
-                    <h3>Student Activities</h3>
-                    <p>Opportunities for co-curricular and student-development activities.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div style="text-align:center;margin-top:35px;">
-            <a href="facilities.html" class="btn btn-blue">Explore Facilities</a>
-        </div>
-
-    </div>
-</section>
-
-<section class="section section-light">
-    <div class="container">
-
-        <div class="section-head">
-            <div class="eyebrow">Principal's Message</div>
-            <h2>Guidance For Our Students</h2>
-        </div>
-
-        <div class="content-box reveal">
-            <p>
-                The college works towards providing quality and value-based
-                education while encouraging students to develop confidence,
-                creativity, leadership and a sense of responsibility.
+                Shaheed Darshan Singh Pheruman Memorial College
+                for Women is committed to providing quality
+                education and opportunities for the overall
+                development of its students.
             </p>
 
             <p>
-                Students are encouraged to make the best use of academic,
-                co-curricular and campus opportunities available to them.
+                The college provides a supportive environment
+                where students can develop knowledge, confidence,
+                skills and a sense of responsibility.
             </p>
 
-            <div style="margin-top:25px;">
-                <a href="principal-message.html" class="btn btn-blue">
-                    Read Principal's Message
-                </a>
+            <a href="about.html" class="text-btn">
+                Read About College →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK NAVIGATION ================= -->
+
+<section class="home-links">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>EXPLORE</span>
+            <h2>Explore Our College</h2>
+            <p>
+                Find detailed information through the sections
+                available in the navigation menu.
+            </p>
+        </div>
+
+
+        <div class="home-link-grid">
+
+            <a href="about.html" class="home-link-card">
+                <div class="link-icon">01</div>
+                <h3>About College</h3>
+                <p>
+                    Learn about the college, its vision,
+                    mission and history.
+                </p>
+                <span>View More →</span>
+            </a>
+
+
+            <a href="courses.html" class="home-link-card">
+                <div class="link-icon">02</div>
+                <h3>Courses</h3>
+                <p>
+                    Explore undergraduate, postgraduate
+                    and skill-based programmes.
+                </p>
+                <span>View Courses →</span>
+            </a>
+
+
+            <a href="departments.html" class="home-link-card">
+                <div class="link-icon">03</div>
+                <h3>Departments</h3>
+                <p>
+                    Explore academic departments and
+                    their faculty members.
+                </p>
+                <span>View Departments →</span>
+            </a>
+
+
+            <a href="facilities.html" class="home-link-card">
+                <div class="link-icon">04</div>
+                <h3>Facilities</h3>
+                <p>
+                    Discover the facilities and services
+                    available on campus.
+                </p>
+                <span>View Facilities →</span>
+            </a>
+
+
+            <a href="gallery.html" class="home-link-card">
+                <div class="link-icon">05</div>
+                <h3>Gallery</h3>
+                <p>
+                    View photographs and memories
+                    from college activities.
+                </p>
+                <span>Open Gallery →</span>
+            </a>
+
+
+            <a href="contact.html" class="home-link-card">
+                <div class="link-icon">06</div>
+                <h3>Contact</h3>
+                <p>
+                    Find the college address, phone
+                    numbers and contact information.
+                </p>
+                <span>Contact Us →</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SIMPLE CTA ================= -->
+
+<section class="home-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div>
+                <span>YOUR JOURNEY STARTS HERE</span>
+
+                <h2>
+                    Learn. Grow. Build Your Future.
+                </h2>
             </div>
+
+            <a href="courses.html" class="btn">
+                View Courses
+            </a>
+
         </div>
 
     </div>
+
 </section>
 
-<section class="cta">
-    <div class="container cta-inner">
-        <div>
-            <h2>Begin Your College Journey</h2>
-            <p>Explore courses, student services and campus facilities.</p>
-        </div>
 
-        <div class="hero-buttons">
-            <a href="courses.html" class="btn btn-primary">Courses</a>
-            <a href="contact.html" class="btn btn-outline">Contact Us</a>
-        </div>
-    </div>
-</section>
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
-    <div class="container footer-grid">
 
-        <div>
-            <div class="footer-brand">
-                <img src="logoo.png" alt="Logo">
-                <strong>SDSP Memorial College</strong>
-            </div>
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+
+            <img src="logoo.png" alt="College Logo">
+
+            <h3>
+                Shaheed Darshan Singh
+                Pheruman Memorial College
+            </h3>
+
             <p>
-                Shaheed Darshan Singh Pheruman Memorial College for Women,
-                Rayya, Amritsar, Punjab.
+                For Women
             </p>
+
         </div>
 
-        <div>
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="facilities.html">Facilities</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-            </ul>
+
+        <div class="footer-links">
+
+            <h4>Quick Links</h4>
+
+            <a href="sdspc.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="departments.html">Departments</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+
         </div>
 
-        <div>
-            <h3>Students</h3>
-            <ul class="footer-links">
-                <li><a href="notices.html">Notices</a></li>
-                <li><a href="results.html">Results</a></li>
-                <li><a href="downloads.html">Downloads</a></li>
-                <li><a href="scholarships.html">Scholarships</a></li>
-            </ul>
-        </div>
 
-        <div>
-            <h3>Contact</h3>
-            <p>Rayya, Amritsar, Punjab</p>
-            <p>01853-222403</p>
-            <p>+91-9646847383</p>
+        <div class="footer-contact">
+
+            <h4>Contact</h4>
+
+            <p>
+                Rayya, District Amritsar,
+                Punjab, India
+            </p>
+
+            <p>
+                +91 1853 222403
+            </p>
+
+            <p>
+                sdspmcfwr@gmail.com
+            </p>
+
         </div>
 
     </div>
 
-    <div class="container footer-bottom">
-        © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women. All Rights Reserved.
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Shaheed Darshan Singh Pheruman Memorial College for Women.
+            All Rights Reserved.
+        </p>
+
     </div>
+
 </footer>
 
-<script src="script.js"></script>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let slideIndex = 1;
+
+showSlides(slideIndex);
+
+
+/* Next / Previous */
+
+function changeSlide(n) {
+    showSlides(slideIndex += n);
+}
+
+
+/* Dot navigation */
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+
+/* Slider */
+
+function showSlides(n) {
+
+    let slides = document.querySelectorAll(".hero-slide");
+    let dots = document.querySelectorAll(".dot");
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    slides.forEach(function(slide) {
+        slide.classList.remove("active");
+    });
+
+    dots.forEach(function(dot) {
+        dot.classList.remove("active");
+    });
+
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+}
+
+
+/* Auto Slider */
+
+setInterval(function() {
+    changeSlide(1);
+}, 5000);
+
+</script>
+
 </body>
 </html>
