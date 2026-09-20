@@ -3,136 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Facilities | SDSP Memorial College</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#333}
-nav{background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:10}
-.logo{display:flex;align-items:center;gap:10px}
-.logo img{width:55px;height:55px}
-.logo h2{font-size:17px;color:#164b78}
-.links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.links a{text-decoration:none;color:#333;font-size:14px;font-weight:bold}
-.hero{background:linear-gradient(135deg,#164b78,#1677b8);color:#fff;text-align:center;padding:80px 6%}
-.hero h1{font-size:42px;margin-bottom:12px}
-.container{max-width:1150px;margin:auto;padding:65px 6%}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px #00000012}
-.card img{width:100%;height:210px;object-fit:cover}
-.card-content{padding:25px}
-.card h2{color:#164b78;margin-bottom:10px}
-.card p{color:#666;line-height:1.7}
-footer{background:#102f4b;color:#fff;text-align:center;padding:40px}
-footer p{color:#d3e0ea}
-@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){nav{flex-direction:column;gap:12px}.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<nav>
+<nav class="navbar"><div class="container nav-inner">
+<a href="sdspc.html" class="brand"><img src="logoo.png"><div class="brand-text">Shaheed Darshan Singh Pheruman<span>Memorial College for Women</span></div></a>
+<button class="menu-btn">☰</button>
+<ul class="nav-links"><li><a href="sdspc.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="courses.html">Courses</a></li><li><a href="departments.html">Departments</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="student-corner.html">Student Corner</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul>
+</div></nav>
 
-<div class="logo">
-<img src="logoo.png" alt="College Logo">
-<h2>Shaheed Darshan Singh Pheruman<br>Memorial College for Women</h2>
-</div>
+<section class="page-hero"><div class="container page-head"><div class="eyebrow">Campus</div><h1>Facilities</h1><p>Academic, student-support and campus facilities.</p></div></section>
 
-<div class="links">
-<a href="sdspc.html">Home</a>
-<a href="Read more.html">About</a>
-<a href="courses.html">Academics</a>
-<a href="facilities.html">Facilities</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-</div>
+<section class="section">
+<div class="container">
+<div class="grid grid-3">
 
-</nav>
+<div class="card facility-card"><img src="library.jpg"><div class="card-body"><h3>Library</h3><p>The college library provides a substantial collection of books and academic resources.</p></div></div>
 
-<header class="hero">
-<h1>Campus Facilities</h1>
-<p>Facilities that support learning and student development.</p>
-</header>
+<div class="card facility-card"><img src="clss.jpeg"><div class="card-body"><h3>Classrooms</h3><p>The campus has 38 classrooms supporting regular academic teaching.</p></div></div>
 
-<section class="container">
+<div class="card facility-card"><img src="rec.jpeg"><div class="card-body"><h3>Auditorium</h3><p>The campus includes a 1000-seat auditorium for academic and cultural activities.</p></div></div>
 
-<div class="grid">
+<div class="card"><div class="card-body"><h3>Computer Labs</h3><p>Computer facilities support application-oriented and technology-based learning.</p></div></div>
 
-<div class="card">
-<img src="library.jpg" alt="Library">
-<div class="card-content">
-<h2>Library</h2>
-<p>
-The library provides students with a dedicated
-environment for reading, study and academic learning.
-</p>
-</div>
-</div>
+<div class="card"><div class="card-body"><h3>Language Lab</h3><p>A dedicated facility supporting language learning.</p></div></div>
 
-<div class="card">
-<img src="clss.jpeg" alt="Computer Facilities">
-<div class="card-content">
-<h2>Computer Facilities</h2>
-<p>
-Computer-related facilities support students in
-their academic and technical learning.
-</p>
-</div>
-</div>
+<div class="card"><div class="card-body"><h3>Fashion Designing Lab</h3><p>Practical learning facilities for fashion designing.</p></div></div>
 
-<div class="card">
-<img src="gate.jpeg" alt="Campus">
-<div class="card-content">
-<h2>Campus</h2>
-<p>
-A college campus providing an environment for
-academic and student activities.
-</p>
-</div>
-</div>
+<div class="card"><div class="card-body"><h3>Book Bank</h3><p>Book-bank support is available as part of student services.</p></div></div>
 
-<div class="card">
-<img src="rec.jpeg" alt="Student Activities">
-<div class="card-content">
-<h2>Student Activities</h2>
-<p>
-Students can participate in activities such as
-NSS, NCC and Red Ribbon Club.
-</p>
-</div>
-</div>
+<div class="card"><div class="card-body"><h3>Career Guidance</h3><p>Students receive support through career guidance activities.</p></div></div>
 
-<div class="card">
-<img src="clss.jpeg" alt="Learning Environment">
-<div class="card-content">
-<h2>Learning Environment</h2>
-<p>
-Classroom and academic spaces support the learning
-and development of students.
-</p>
-</div>
-</div>
-
-<div class="card">
-<img src="rec.jpeg" alt="Campus Life">
-<div class="card-content">
-<h2>Campus Life</h2>
-<p>
-Opportunities for students to participate in
-academic, social and cultural activities.
-</p>
-</div>
-</div>
+<div class="card"><div class="card-body"><h3>Medical Facility</h3><p>Student support includes a medical facility.</p></div></div>
 
 </div>
-
+</div>
 </section>
 
-<footer>
-<p>© 2026 Shaheed Darshan Singh Pheruman Memorial College. All Rights Reserved.</p>
-</footer>
-
+<footer class="footer"><div class="container footer-bottom">© 2026 SDSP Memorial College for Women</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
