@@ -1,0 +1,451 @@
+/* =========================================
+   SDSP ENTRANCE TEST
+========================================= */
+
+.entrance-page {
+    background: #f5f8fc;
+    min-height: 70vh;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.entrance-hero {
+    background: linear-gradient(
+        135deg,
+        #073b6f,
+        #0b5b9b
+    );
+
+    padding: 65px 0;
+    color: #ffffff;
+}
+
+.entrance-container {
+    width: 92%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.14);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.entrance-hero h1 {
+    margin: 0 0 12px;
+
+    font-size: 42px;
+}
+
+.entrance-hero p {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: rgba(255,255,255,.82);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   TEST SECTION
+========================================= */
+
+.test-section {
+    padding: 45px 0 80px;
+}
+
+
+/* =========================================
+   STUDENT INFO
+========================================= */
+
+.student-info-card {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.student-info-card > div {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 18px 20px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.04);
+}
+
+.student-info-card span {
+    display: block;
+
+    color: #7b8794;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.student-info-card strong {
+    display: block;
+
+    color: #073b6f;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   TEST CARD
+========================================= */
+
+.test-card {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    border: 1px solid #e1e7ef;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TEST HEADER
+========================================= */
+
+.test-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 28px 30px;
+
+    border-bottom: 1px solid #e8edf3;
+}
+
+.test-header h2 {
+    margin: 0 0 7px;
+
+    color: #073b6f;
+
+    font-size: 23px;
+}
+
+.test-header p {
+    margin: 0;
+
+    color: #788494;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TIMER
+========================================= */
+
+.test-timer {
+    min-width: 125px;
+
+    text-align: center;
+
+    background: #f0f6fc;
+
+    border: 1px solid #d9e7f5;
+
+    border-radius: 12px;
+
+    padding: 12px 15px;
+}
+
+.test-timer span {
+    display: block;
+
+    color: #748094;
+
+    font-size: 11px;
+
+    margin-bottom: 4px;
+}
+
+.test-timer strong {
+    color: #073b6f;
+
+    font-size: 22px;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================
+   QUESTIONS
+========================================= */
+
+#questionsContainer {
+    padding: 30px;
+}
+
+.question-card {
+    padding: 24px;
+
+    margin-bottom: 22px;
+
+    background: #fafcff;
+
+    border: 1px solid #e3eaf2;
+
+    border-radius: 12px;
+}
+
+.question-number {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #0b5b9b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.question-card h3 {
+    margin: 0 0 18px;
+
+    color: #263445;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   OPTIONS
+========================================= */
+
+.options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce4ed;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.option:hover {
+    border-color: #8db5d8;
+
+    background: #f4f9fe;
+}
+
+.option input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: #073b6f;
+
+    flex-shrink: 0;
+}
+
+.option span {
+    color: #3c4858;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   SUBMIT
+========================================= */
+
+.test-submit-area {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    background: #f8fafc;
+
+    border-top: 1px solid #e6ebf1;
+}
+
+.test-submit-area p {
+    margin: 0;
+
+    color: #7b8794;
+
+    font-size: 13px;
+}
+
+.test-submit-btn {
+    border: none;
+
+    background: #073b6f;
+
+    color: #ffffff;
+
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.test-submit-btn:hover {
+    background: #052f59;
+
+    transform: translateY(-1px);
+}
+
+.test-submit-btn span {
+    margin-left: 8px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.test-message {
+    display: none;
+
+    margin: 20px 30px 0;
+
+    padding: 14px 16px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.test-message.error {
+    display: block;
+
+    color: #9b1c1c;
+
+    background: #fff1f1;
+
+    border: 1px solid #f2c7c7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 750px) {
+
+    .entrance-hero {
+        padding: 45px 0;
+    }
+
+    .entrance-hero h1 {
+        font-size: 32px;
+    }
+
+    .student-info-card {
+        grid-template-columns: 1fr;
+    }
+
+    .test-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .test-timer {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #questionsContainer {
+        padding: 20px;
+    }
+
+    .question-card {
+        padding: 18px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .test-submit-area {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .test-submit-btn {
+        width: 100%;
+    }
+
+}
