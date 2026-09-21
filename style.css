@@ -72,30 +72,29 @@ button{
 
 
 /* =========================================================
-   NAVBAR
+   COMPACT NAVBAR
    ========================================================= */
 
 .navbar{
     width:100%;
     background:#fff;
-
     border-bottom:1px solid var(--border);
-
     position:sticky;
     top:0;
     z-index:1000;
-
-    box-shadow:0 4px 18px rgba(0,0,0,.04);
+    box-shadow:0 3px 14px rgba(0,0,0,.05);
 }
 
 .nav-container{
-    min-height:78px;
+    width:min(var(--container),92%);
+    min-height:72px;
+    margin:0 auto;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    gap:30px;
+    gap:25px;
 }
 
 
@@ -104,19 +103,15 @@ button{
 .logo{
     display:flex;
     align-items:center;
-
-    gap:10px;
-
+    gap:9px;
     flex-shrink:0;
 }
 
 .logo img{
     width:58px;
     height:58px;
-
     object-fit:contain;
     object-position:center;
-
     display:block;
     flex-shrink:0;
 }
@@ -124,50 +119,50 @@ button{
 .logo-text{
     display:flex;
     flex-direction:column;
-
-    line-height:1.25;
+    line-height:1.15;
 }
 
 .logo strong{
     color:var(--blue);
-
-    font-size:16px;
+    font-size:15px;
     font-weight:700;
 }
 
 .logo span{
     color:#7a8795;
-
-    font-size:12px;
+    font-size:11px;
 }
 
 
-/* NAV LINKS */
+/* NAVIGATION */
 
 .nav-links{
-    list-style:none;
-
     display:flex;
     align-items:center;
-
-    gap:5px;
+    justify-content:flex-end;
+    gap:2px;
+    list-style:none;
 }
 
 .nav-links a{
-    display:block;
+    display:flex;
+    align-items:center;
 
-    padding:9px 13px;
+    min-height:42px;
+    padding:8px 13px;
 
     color:#364152;
 
     font-size:14px;
     font-weight:600;
 
-    border-radius:8px;
+    border-radius:9px;
+
+    white-space:nowrap;
 
     transition:
-        color .25s ease,
-        background .25s ease;
+        background .2s ease,
+        color .2s ease;
 }
 
 .nav-links a:hover{
@@ -181,6 +176,73 @@ button{
 }
 
 
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .nav-container{
+        min-height:auto;
+        padding:10px 0;
+
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .logo{
+        width:100%;
+        justify-content:center;
+    }
+
+    .logo img{
+        width:50px;
+        height:50px;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:3px;
+    }
+
+    .nav-links a{
+        min-height:36px;
+        padding:6px 9px;
+        font-size:13px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:500px){
+
+    .nav-container{
+        padding:8px 0;
+    }
+
+    .logo img{
+        width:46px;
+        height:46px;
+    }
+
+    .logo strong{
+        font-size:13px;
+    }
+
+    .logo span{
+        font-size:10px;
+    }
+
+    .nav-links a{
+        padding:6px 7px;
+        font-size:12px;
+    }
+}
 /* =========================================================
    HERO
    ========================================================= */
