@@ -29,7 +29,115 @@
 
     --container:1180px;
 }
+/* =========================================
+   STUDENT CORNER DROPDOWN
+========================================= */
 
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: #364152;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.dropbtn:hover {
+    color: #073b6f;
+    background: #eef6ff;
+}
+
+
+/* DROPDOWN MENU */
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+
+    min-width: 210px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9ef;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+
+    padding: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+
+    z-index: 99999;
+}
+
+
+/* DROPDOWN LINKS */
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 10px 12px;
+
+    color: #364152;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background: #eef6ff;
+    color: #073b6f;
+}
+
+
+/* SHOW ON HOVER */
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+    .dropdown {
+        width: auto;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 8px);
+
+        min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        transform: translate(-50%, 0);
+    }
+
+}
 
 /* =========================================================
    2. RESET
