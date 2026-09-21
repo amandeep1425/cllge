@@ -1,0 +1,678 @@
+/* =========================================
+   SDSP ONLINE ADMISSION
+========================================= */
+
+.admission-container {
+    width: 92%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.admission-hero {
+    background:
+        linear-gradient(
+            135deg,
+            #063b70,
+            #0a5b9c
+        );
+
+    padding: 85px 0;
+    color: #fff;
+}
+
+.admission-hero-content {
+    max-width: 760px;
+}
+
+.admission-tag {
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #0a5b9c;
+    background: #fff;
+
+    padding: 8px 14px;
+    border-radius: 30px;
+
+    margin-bottom: 20px;
+}
+
+.admission-hero h1 {
+    margin: 0 0 20px;
+
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.1;
+
+    color: #fff;
+}
+
+.admission-hero h1 span {
+    display: block;
+    color: #dceeff;
+}
+
+.admission-hero p {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   STEPS
+========================================= */
+
+.admission-steps-section {
+    padding: 75px 0;
+    background: #f7faff;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.section-heading > span {
+    color: #0a5b9c;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    margin: 10px 0;
+
+    color: #102a43;
+
+    font-size: 34px;
+}
+
+.section-heading p {
+    color: #718096;
+}
+
+
+.admission-steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.admission-step {
+    background: #fff;
+
+    padding: 30px 24px;
+
+    border: 1px solid #e5edf5;
+    border-radius: 14px;
+
+    transition: .25s ease;
+}
+
+.admission-step:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(20,55,90,.08);
+}
+
+
+.active-step {
+    border-color: #0a5b9c;
+}
+
+
+.step-number {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf4ff;
+    color: #0a5b9c;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.admission-step h3 {
+    margin: 0 0 10px;
+
+    color: #102a43;
+
+    font-size: 18px;
+}
+
+.admission-step p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   REGISTRATION
+========================================= */
+
+.registration-section {
+    padding: 90px 0;
+
+    background: #fff;
+}
+
+
+.registration-layout {
+    display: grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   LEFT INFORMATION
+========================================= */
+
+.registration-info {
+    padding-top: 15px;
+}
+
+.registration-info > .admission-tag {
+    background: #eaf4ff;
+    color: #0a5b9c;
+}
+
+.registration-info h2 {
+    margin: 18px 0;
+
+    color: #102a43;
+
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.registration-info > p {
+    color: #718096;
+
+    line-height: 1.8;
+
+    max-width: 500px;
+}
+
+
+.info-box {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 28px;
+}
+
+.info-icon {
+    flex-shrink: 0;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf4ff;
+    color: #0a5b9c;
+
+    font-weight: 800;
+}
+
+.info-box h4 {
+    margin: 0 0 5px;
+
+    color: #243b53;
+}
+
+.info-box p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   EXISTING STUDENT
+========================================= */
+
+.existing-student-box {
+    margin-top: 40px;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    background: #f7faff;
+    border: 1px solid #e1ebf5;
+}
+
+.existing-student-box h3 {
+    margin: 0 0 8px;
+
+    color: #102a43;
+
+    font-size: 18px;
+}
+
+.existing-student-box p {
+    margin: 0 0 15px;
+
+    color: #718096;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.existing-student-box a {
+    color: #0a5b9c;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   REGISTRATION CARD
+========================================= */
+
+.registration-card {
+    background: #fff;
+
+    padding: 38px;
+
+    border: 1px solid #e2eaf2;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 55px rgba(16,42,67,.08);
+}
+
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.form-heading > span {
+    color: #0a5b9c;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.form-heading h2 {
+    margin: 8px 0;
+
+    color: #102a43;
+
+    font-size: 28px;
+}
+
+.form-heading p {
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #243b53;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d8e2ec;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #243b53;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: .2s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0a5b9c;
+
+    box-shadow:
+        0 0 0 3px rgba(10,91,156,.10);
+}
+
+
+.form-group input::placeholder {
+    color: #a0aec0;
+}
+
+
+/* =========================================
+   TERMS
+========================================= */
+
+.terms-box {
+    margin: 22px 0;
+}
+
+.checkbox-label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    color: #718096;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.checkbox-label input {
+    margin-top: 3px;
+
+    accent-color: #0a5b9c;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.registration-btn {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    border: none;
+
+    padding: 15px 20px;
+
+    border-radius: 9px;
+
+    background: #0a5b9c;
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.registration-btn:hover {
+    background: #073f70;
+
+    transform: translateY(-1px);
+}
+
+.registration-btn span {
+    font-size: 20px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.registration-message {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.registration-message.success {
+    display: block;
+
+    background: #edfdf4;
+
+    color: #18794e;
+
+    border: 1px solid #b7ebd1;
+}
+
+.registration-message.error {
+    display: block;
+
+    background: #fff3f3;
+
+    color: #b42318;
+
+    border: 1px solid #f3c2c2;
+}
+
+
+/* =========================================
+   IMPORTANT SECTION
+========================================= */
+
+.important-section {
+    padding: 70px 0;
+
+    background: #f7faff;
+}
+
+
+.important-card {
+    padding: 45px;
+
+    background: #102a43;
+
+    border-radius: 18px;
+
+    color: #fff;
+}
+
+
+.important-title > span {
+    color: #9ed0ff;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.important-title h2 {
+    margin: 8px 0 35px;
+
+    color: #fff;
+
+    font-size: 30px;
+}
+
+
+.important-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.important-grid h3 {
+    margin: 0 0 10px;
+
+    color: #fff;
+
+    font-size: 17px;
+}
+
+.important-grid p {
+    margin: 0;
+
+    color: rgba(255,255,255,.68);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   NAV ADMISSION BUTTON
+========================================= */
+
+.admission-nav {
+    background: #0a5b9c !important;
+    color: #fff !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .admission-steps {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .registration-layout {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .important-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .admission-hero {
+        padding: 60px 0;
+    }
+
+    .admission-hero h1 {
+        font-size: 36px;
+    }
+
+    .admission-hero p {
+        font-size: 15px;
+    }
+
+    .admission-steps-section,
+    .registration-section,
+    .important-section {
+        padding: 55px 0;
+    }
+
+    .admission-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-info h2 {
+        font-size: 30px;
+    }
+
+    .registration-card {
+        padding: 25px 20px;
+    }
+
+    .important-card {
+        padding: 30px 22px;
+    }
+
+}
