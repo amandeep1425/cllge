@@ -1699,19 +1699,13 @@ tr:hover td{
 
 @media(max-width:400px){
 
-    .logo img{
-        width:48px;
-        height:48px;
-    }
-
-    .logo strong{
-        font-size:14px;
-    }
-
-    .logo span{
-        font-size:11px;
-    }
-
+   .logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
     .nav-links a{
         padding:6px 7px;
 
