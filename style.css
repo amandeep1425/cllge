@@ -1356,7 +1356,28 @@ tr:hover td{
 
     font-size:14px;
 }
+.content-box h3 {
+    color: var(--blue);
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
 
+.content-box h3 + p {
+    line-height: 1.75;
+}
+
+.content-box .btn {
+    margin-top: 12px;
+}
+
+@media (max-width: 850px) {
+
+    .content-box h3 {
+        font-size: 17px;
+    }
+
+}
 
 /* =========================================================
    26. FOOTER
