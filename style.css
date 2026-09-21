@@ -1512,21 +1512,19 @@ tr:last-child td{
 
 @media(max-width:450px){
 
-    .navbar .logo img{
-        width:44px !important;
-        height:44px !important;
+.navbar .logo img {
+    width: 50px !important;
+    height: 50px !important;
 
-        max-width:44px !important;
-    }
+    min-width: 50px !important;
+    max-width: 50px !important;
 
-    .logo-text strong{
-        font-size:14px;
-    }
+    min-height: 50px !important;
+    max-height: 50px !important;
 
-    .logo-text span{
-        font-size:10px;
-    }
-
+    object-fit: contain !important;
+    display: block !important;
+}
     .nav-links a{
         padding:6px 7px;
 
