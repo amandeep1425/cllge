@@ -131,11 +131,9 @@ button{
     flex-shrink:0;
 }
 
-.logo img{
-    width:48px;
-    height:48px;
-
-    object-fit:contain;
+.logo img {
+  width: 120px;
+  height: auto;
 }
 
 .logo-text{
