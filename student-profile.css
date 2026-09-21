@@ -1,0 +1,439 @@
+/* =========================================
+   SDSP STUDENT PROFILE
+========================================= */
+
+.profile-page {
+    background: #f5f8fc;
+    min-height: 70vh;
+}
+
+.profile-container {
+    width: 92%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* HERO */
+
+.profile-hero {
+    padding: 60px 0;
+
+    background: linear-gradient(
+        135deg,
+        #073b6f,
+        #0b5b9b
+    );
+
+    color: #fff;
+}
+
+.profile-badge {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    margin-bottom: 14px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.14);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.profile-hero h1 {
+    margin: 0 0 10px;
+
+    font-size: 40px;
+}
+
+.profile-hero p {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: rgba(255,255,255,.82);
+
+    line-height: 1.7;
+}
+
+
+/* SECTION */
+
+.profile-section {
+    padding: 45px 0 80px;
+}
+
+
+/* APPLICATION SUMMARY */
+
+.application-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.application-summary > div {
+    background: #fff;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 11px;
+
+    padding: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.04);
+}
+
+.application-summary span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #7b8794;
+
+    font-size: 11px;
+}
+
+.application-summary strong {
+    display: block;
+
+    color: #073b6f;
+
+    font-size: 14px;
+}
+
+
+/* MESSAGE */
+
+.profile-message {
+    display: none;
+
+    margin-bottom: 20px;
+
+    padding: 14px 16px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.profile-message.success {
+    display: block;
+
+    color: #176b42;
+
+    background: #edfaf3;
+
+    border: 1px solid #bfe8d0;
+}
+
+.profile-message.error {
+    display: block;
+
+    color: #a21c1c;
+
+    background: #fff1f1;
+
+    border: 1px solid #f0caca;
+}
+
+
+/* FORM CARD */
+
+.form-card {
+    margin-bottom: 22px;
+
+    padding: 28px;
+
+    background: #fff;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 25px rgba(0,0,0,.045);
+}
+
+.form-card-header {
+    margin-bottom: 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.form-card-header h2 {
+    margin: 0 0 7px;
+
+    color: #073b6f;
+
+    font-size: 21px;
+}
+
+.form-card-header p {
+    margin: 0;
+
+    color: #7a8795;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* FORM GRID */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+
+    color: #344054;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 13px;
+
+    border: 1px solid #d7e0e9;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #263445;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #5892c2;
+
+    box-shadow:
+        0 0 0 3px rgba(40,110,170,.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* DOCUMENTS */
+
+.document-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.document-box {
+    padding: 18px;
+
+    border: 1px dashed #cbd6e2;
+
+    border-radius: 10px;
+
+    background: #fafcff;
+}
+
+.document-box label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #344054;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.document-box input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    font-size: 12px;
+}
+
+.document-box small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8793a2;
+
+    font-size: 11px;
+}
+
+
+/* DECLARATION */
+
+.declaration-box {
+    margin-bottom: 20px;
+
+    padding: 17px 18px;
+
+    background: #fff;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 10px;
+}
+
+.declaration-box label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #526071;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+.declaration-box input {
+    margin-top: 3px;
+
+    accent-color: #073b6f;
+}
+
+
+/* SUBMIT */
+
+.profile-submit {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.profile-submit button {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    background: #073b6f;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.profile-submit button:hover {
+    background: #052f59;
+
+    transform: translateY(-1px);
+}
+
+.profile-submit button span {
+    margin-left: 8px;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+    .profile-hero {
+        padding: 45px 0;
+    }
+
+    .profile-hero h1 {
+        font-size: 31px;
+    }
+
+    .application-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .document-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-submit button {
+        width: 100%;
+    }
+
+}
+
+@media(max-width: 480px) {
+
+    .application-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
