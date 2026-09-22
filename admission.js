@@ -1,15 +1,21 @@
 /* =========================================
-   SDSP ADMISSION SYSTEM - PART 2
+   SDSP ADMISSION SYSTEM
+   GOOGLE SHEET CONNECTED VERSION
 ========================================= */
+
+
+/* =========================================
+   GOOGLE APPS SCRIPT URL
+========================================= */
+
+const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxp1t5L3GCP2QDqE3FRuIim3tmGNdTi3HcJCR-wg3x-xxtS7Mhm87BFsmg2w9tMr5WK/exec";
 
 
 /* =========================================
    COURSE ELIGIBILITY RULES
 
-   These are frontend screening rules only.
-   Final admission eligibility should be
-   verified by the college according to
-   applicable GNDU/college rules.
+   Frontend screening only.
 ========================================= */
 
 const eligibilityRules = {
@@ -79,10 +85,13 @@ const eligibilityRules = {
 
 function generateApplicationNumber() {
 
-    const year = new Date().getFullYear();
+    const year =
+        new Date().getFullYear();
 
     const randomNumber =
-        Math.floor(100000 + Math.random() * 900000);
+        Math.floor(
+            100000 + Math.random() * 900000
+        );
 
     return `SDSP-${year}-${randomNumber}`;
 }
@@ -92,9 +101,14 @@ function generateApplicationNumber() {
    ELIGIBILITY CHECK
 ========================================= */
 
-function checkEligibility(course, qualification, percentage) {
+function checkEligibility(
+    course,
+    qualification,
+    percentage
+) {
 
-    const rule = eligibilityRules[course];
+    const rule =
+        eligibilityRules[course];
 
     if (!rule) {
 
@@ -107,7 +121,11 @@ function checkEligibility(course, qualification, percentage) {
     }
 
 
-    if (!rule.qualification.includes(qualification)) {
+    if (
+        !rule.qualification.includes(
+            qualification
+        )
+    ) {
 
         return {
             eligible: false,
@@ -118,7 +136,10 @@ function checkEligibility(course, qualification, percentage) {
     }
 
 
-    if (percentage < rule.minimumPercentage) {
+    if (
+        percentage <
+        rule.minimumPercentage
+    ) {
 
         return {
             eligible: false,
@@ -130,9 +151,12 @@ function checkEligibility(course, qualification, percentage) {
 
 
     return {
+
         eligible: true,
+
         message:
             "You meet the basic eligibility criteria for the selected course."
+
     };
 
 }
@@ -143,17 +167,21 @@ function checkEligibility(course, qualification, percentage) {
 ========================================= */
 
 const registrationForm =
-    document.getElementById("registrationForm");
+    document.getElementById(
+        "registrationForm"
+    );
 
 const registrationMessage =
-    document.getElementById("registrationMessage");
+    document.getElementById(
+        "registrationMessage"
+    );
 
 
 if (registrationForm) {
 
     registrationForm.addEventListener(
         "submit",
-        function(event) {
+        async function(event) {
 
             event.preventDefault();
 
@@ -164,36 +192,53 @@ if (registrationForm) {
 
             const name =
                 document
-                    .getElementById("studentName")
+                    .getElementById(
+                        "studentName"
+                    )
                     .value
                     .trim();
+
 
             const email =
                 document
-                    .getElementById("studentEmail")
+                    .getElementById(
+                        "studentEmail"
+                    )
                     .value
                     .trim();
+
 
             const mobile =
                 document
-                    .getElementById("studentMobile")
+                    .getElementById(
+                        "studentMobile"
+                    )
                     .value
                     .trim();
 
+
             const course =
                 document
-                    .getElementById("course")
+                    .getElementById(
+                        "course"
+                    )
                     .value;
+
 
             const qualification =
                 document
-                    .getElementById("qualification")
+                    .getElementById(
+                        "qualification"
+                    )
                     .value;
+
 
             const percentage =
                 Number(
                     document
-                        .getElementById("percentage")
+                        .getElementById(
+                            "percentage"
+                        )
                         .value
                 );
 
@@ -219,7 +264,11 @@ if (registrationForm) {
             }
 
 
-            if (!/^[0-9]{10}$/.test(mobile)) {
+            if (
+                !/^[0-9]{10}$/.test(
+                    mobile
+                )
+            ) {
 
                 showMessage(
                     "Please enter a valid 10-digit mobile number.",
@@ -231,7 +280,9 @@ if (registrationForm) {
 
 
             if (
-                Number.isNaN(percentage) ||
+                Number.isNaN(
+                    percentage
+                ) ||
                 percentage < 0 ||
                 percentage > 100
             ) {
@@ -257,7 +308,9 @@ if (registrationForm) {
                 );
 
 
-            if (!eligibility.eligible) {
+            if (
+                !eligibility.eligible
+            ) {
 
                 showMessage(
                     eligibility.message,
@@ -269,82 +322,7 @@ if (registrationForm) {
 
 
             /* -----------------------------
-               APPLICATION NUMBER
-            ----------------------------- */
-
-            const applicationNumber =
-                generateApplicationNumber();
-
-
-            /* -----------------------------
-               APPLICATION OBJECT
-
-               Temporary local storage.
-               Backend database will replace
-               this in the next stage.
-            ----------------------------- */
-
-            const application = {
-
-                applicationNumber,
-
-                studentName: name,
-
-                email,
-
-                mobile,
-
-                course,
-
-                qualification,
-
-                percentage,
-
-                status: "Entrance Test Pending",
-
-                eligibility: "Basic Eligibility Passed",
-
-                createdAt:
-                    new Date().toISOString()
-
-            };
-
-
-            /* -----------------------------
-               SAVE TEMPORARILY
-            ----------------------------- */
-
-            localStorage.setItem(
-                "sdspAdmissionApplication",
-                JSON.stringify(application)
-            );
-
-
-            /* -----------------------------
-               SHOW SUCCESS
-            ----------------------------- */
-
-            showMessage(
-                `
-                <strong>Registration Successful!</strong><br><br>
-
-                Application Number:
-                <strong>${applicationNumber}</strong><br><br>
-
-                You have passed the basic eligibility
-                screening for <strong>${course}</strong>.
-
-                <br><br>
-
-                Your next stage is the
-                <strong>Entrance Test</strong>.
-                `,
-                "success"
-            );
-
-
-            /* -----------------------------
-               BUTTON CHANGE
+               BUTTON
             ----------------------------- */
 
             const button =
@@ -355,15 +333,235 @@ if (registrationForm) {
 
             if (button) {
 
+                button.disabled = true;
+
                 button.innerHTML =
-                    'Proceed to Entrance Test <span>→</span>';
+                    "Registering...";
 
-                button.onclick = function() {
+            }
 
-                    window.location.href =
-                        "entrance-test.html";
 
-                };
+            /* -----------------------------
+               SEND TO GOOGLE SHEET
+            ----------------------------- */
+
+            try {
+
+                const response =
+                    await fetch(
+                        GOOGLE_SCRIPT_URL,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "text/plain;charset=utf-8"
+                            },
+
+                            body: JSON.stringify({
+
+                                action:
+                                    "register",
+
+                                studentName:
+                                    name,
+
+                                email:
+                                    email,
+
+                                mobile:
+                                    mobile,
+
+                                course:
+                                    course,
+
+                                qualification:
+                                    qualification,
+
+                                percentage:
+                                    percentage,
+
+                                eligibility:
+                                    "Basic Eligibility Passed"
+
+                            })
+
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                /* -----------------------------
+                   GOOGLE SHEET SUCCESS
+                ----------------------------- */
+
+                if (
+                    result.success
+                ) {
+
+                    const application = {
+
+                        applicationNumber:
+                            result.applicationId,
+
+                        studentId:
+                            result.studentId,
+
+                        password:
+                            result.password,
+
+                        studentName:
+                            name,
+
+                        email:
+                            email,
+
+                        mobile:
+                            mobile,
+
+                        course:
+                            course,
+
+                        qualification:
+                            qualification,
+
+                        percentage:
+                            percentage,
+
+                        status:
+                            "Entrance Test Pending",
+
+                        eligibility:
+                            "Basic Eligibility Passed",
+
+                        createdAt:
+                            new Date().toISOString()
+
+                    };
+
+
+                    /* -----------------------------
+                       SAVE LOCAL COPY
+                    ----------------------------- */
+
+                    localStorage.setItem(
+
+                        "sdspAdmissionApplication",
+
+                        JSON.stringify(
+                            application
+                        )
+
+                    );
+
+
+                    /* -----------------------------
+                       SHOW SUCCESS
+                    ----------------------------- */
+
+                    showMessage(
+                        `
+                        <strong>
+                            Registration Successful!
+                        </strong>
+
+                        <br><br>
+
+                        Application Number:
+                        <strong>
+                            ${result.applicationId}
+                        </strong>
+
+                        <br><br>
+
+                        Student ID:
+                        <strong>
+                            ${result.studentId}
+                        </strong>
+
+                        <br><br>
+
+                        Your basic eligibility
+                        screening has been completed.
+
+                        <br><br>
+
+                        Your next stage is the
+                        <strong>
+                            Entrance Test
+                        </strong>.
+                        `,
+                        "success"
+                    );
+
+
+                    /* -----------------------------
+                       BUTTON CHANGE
+                    ----------------------------- */
+
+                    if (button) {
+
+                        button.disabled =
+                            false;
+
+                        button.innerHTML =
+                            'Proceed to Entrance Test <span>→</span>';
+
+                        button.onclick =
+                            function() {
+
+                                window.location.href =
+                                    "entrance-test.html";
+
+                            };
+
+                    }
+
+
+                } else {
+
+                    throw new Error(
+                        result.message ||
+                        "Registration failed."
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "Registration error:",
+                    error
+                );
+
+
+                showMessage(
+                    `
+                    Registration could not be
+                    submitted right now.
+
+                    <br><br>
+
+                    Please try again.
+                    `,
+                    "error"
+                );
+
+
+                if (button) {
+
+                    button.disabled =
+                        false;
+
+                    button.innerHTML =
+                        'Register <span>→</span>';
+
+                }
 
             }
 
@@ -377,14 +575,19 @@ if (registrationForm) {
    MESSAGE FUNCTION
 ========================================= */
 
-function showMessage(message, type) {
+function showMessage(
+    message,
+    type
+) {
 
     if (!registrationMessage) {
         return;
     }
 
+
     registrationMessage.className =
         `registration-message ${type}`;
+
 
     registrationMessage.innerHTML =
         message;
@@ -393,7 +596,7 @@ function showMessage(message, type) {
 
 
 /* =========================================
-   CHECK EXISTING APPLICATION
+   GET SAVED APPLICATION
 ========================================= */
 
 function getSavedApplication() {
@@ -403,9 +606,11 @@ function getSavedApplication() {
             "sdspAdmissionApplication"
         );
 
+
     if (!data) {
         return null;
     }
+
 
     try {
 
@@ -426,12 +631,9 @@ function getSavedApplication() {
 
 
 /* =========================================
-   DEVELOPMENT HELPER
-
-   Can be removed after backend
-   is connected.
+   DEVELOPMENT MESSAGE
 ========================================= */
 
 console.log(
-    "SDSP Admission System loaded."
+    "SDSP Admission System + Google Sheets loaded."
 );
