@@ -33,38 +33,66 @@
 <h3>College Location</h3>
 <p>G.T. Road, Rayya area, Amritsar district, Punjab.</p>
 </div>
-
 <div class="card">
-<h2>Send An Enquiry</h2>
+    <h2>Send An Enquiry</h2>
 
-<form id="contactForm">
+    <form id="contactForm">
 
-<div class="form-group">
-<label>Name</label>
-<input type="text" required>
+        <div class="form-group">
+            <label for="contactName">Name</label>
+            <input
+                type="text"
+                id="contactName"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input
+                type="email"
+                id="contactEmail"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="contactAddress">Address</label>
+            <input
+                type="text"
+                id="contactAddress"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="contactMessage">
+                Query / Comment
+            </label>
+
+            <textarea
+                id="contactMessage"
+                rows="5"
+                required
+            ></textarea>
+        </div>
+
+        <button
+            type="submit"
+            class="btn btn-blue"
+            id="contactSubmitBtn"
+        >
+            Submit Enquiry
+        </button>
+
+        <div
+            id="contactFormMessage"
+            class="contact-form-message"
+        ></div>
+
+    </form>
 </div>
 
-<div class="form-group">
-<label>Email</label>
-<input type="email" required>
-</div>
-
-<div class="form-group">
-<label>Phone</label>
-<input type="tel">
-</div>
-
-<div class="form-group">
-<label>Message</label>
-<textarea required></textarea>
-</div>
-
-<button type="submit" class="btn btn-blue">Submit Enquiry</button>
-
-</form>
-</div>
-
-</div>
 </section>
 
 <footer class="footer"><div class="container footer-bottom">© 2026 SDSP Memorial College for Women</div></footer>
