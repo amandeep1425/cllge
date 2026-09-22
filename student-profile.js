@@ -1,6 +1,15 @@
 /* =========================================
    SDSP STUDENT PROFILE - PART 4
+   GOOGLE SHEET INTEGRATION
 ========================================= */
+
+
+/* =========================================
+   GOOGLE APPS SCRIPT URL
+========================================= */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxp1t5L3GCP2QDqE3FRuIim3tmGNdTiHcJCR-wg3x-xxtS7Mhm87BFsmg2w9tMr5WK/exec";
 
 
 /* =========================================
@@ -51,9 +60,14 @@ function loadApplication() {
             "error"
         );
 
-        document.getElementById(
-            "saveProfileBtn"
-        ).disabled = true;
+        const button =
+            document.getElementById(
+                "saveProfileBtn"
+            );
+
+        if (button) {
+            button.disabled = true;
+        }
 
         return;
     }
@@ -62,54 +76,68 @@ function loadApplication() {
     document.getElementById(
         "applicationNumber"
     ).textContent =
-        application.applicationNumber || "-";
+        application.applicationId ||
+        application.applicationNumber ||
+        "-";
 
 
     document.getElementById(
         "studentName"
     ).textContent =
-        application.studentName || "-";
+        application.studentName ||
+        "-";
 
 
     document.getElementById(
         "studentCourse"
     ).textContent =
-        application.course || "-";
+        application.course ||
+        "-";
 
 
     document.getElementById(
         "testStatus"
     ).textContent =
-        application.testStatus || "-";
+        application.testStatus ||
+        "-";
 
 
-    /*
-        Student should only continue if
-        entrance test was passed.
-    */
+    /* =========================================
+       CHECK ENTRANCE TEST STATUS
 
-    if (
-        application.testStatus !==
-        "Test Passed"
-    ) {
+       Supports:
+       "Passed"
+       "Test Passed"
+    ========================================= */
+
+    const testPassed =
+        application.testStatus === "Passed" ||
+        application.testStatus === "Test Passed";
+
+
+    if (!testPassed) {
 
         showMessage(
             "Your entrance test has not been cleared. You cannot continue with the profile at this stage.",
             "error"
         );
 
-        document.getElementById(
-            "saveProfileBtn"
-        ).disabled = true;
+        const button =
+            document.getElementById(
+                "saveProfileBtn"
+            );
+
+        if (button) {
+            button.disabled = true;
+        }
 
         return;
     }
 
 
-    /*
-        If profile was previously saved,
-        load existing information.
-    */
+    /* =========================================
+       LOAD PREVIOUS PROFILE
+    ========================================= */
 
     if (application.profile) {
 
@@ -253,13 +281,6 @@ function validateFile(
     }
 
 
-    /*
-        Frontend demo file-size limit.
-
-        Final limit should also be enforced
-        by the backend.
-    */
-
     const maxSize =
         5 * 1024 * 1024;
 
@@ -295,7 +316,7 @@ if (profileForm) {
 
     profileForm.addEventListener(
         "submit",
-        function(event) {
+        async function(event) {
 
             event.preventDefault();
 
@@ -315,10 +336,16 @@ if (profileForm) {
             }
 
 
-            if (
-                application.testStatus !==
-                "Test Passed"
-            ) {
+            /* =========================================
+               CHECK TEST STATUS
+            ========================================= */
+
+            const testPassed =
+                application.testStatus === "Passed" ||
+                application.testStatus === "Test Passed";
+
+
+            if (!testPassed) {
 
                 showMessage(
                     "You must pass the entrance test before completing your profile.",
@@ -329,7 +356,9 @@ if (profileForm) {
             }
 
 
-            /* Aadhaar validation */
+            /* =========================================
+               AADHAAR VALIDATION
+            ========================================= */
 
             const aadhaar =
                 document
@@ -353,7 +382,9 @@ if (profileForm) {
             }
 
 
-            /* File validation */
+            /* =========================================
+               FILE VALIDATION
+            ========================================= */
 
             if (
                 !validateFile(
@@ -395,7 +426,9 @@ if (profileForm) {
             }
 
 
-            /* Profile object */
+            /* =========================================
+               GET PROFILE DATA
+            ========================================= */
 
             const profile = {
 
@@ -480,15 +513,12 @@ if (profileForm) {
             };
 
 
-            /*
-                Demo document metadata.
+            /* =========================================
+               DOCUMENT INFORMATION
 
-                IMPORTANT:
-                Actual files are NOT uploaded to college
-                by localStorage.
-
-                Real backend will upload files securely.
-            */
+               Actual files are not uploaded here yet.
+               File names are stored for now.
+            ========================================= */
 
             const documents = {
 
@@ -513,39 +543,9 @@ if (profileForm) {
             };
 
 
-            application.profile =
-                profile;
-
-
-            application.documents =
-                documents;
-
-
-            application.status =
-                "Payment Pending";
-
-
-            application.profileCompletedAt =
-                new Date().toISOString();
-
-
-            localStorage.setItem(
-                "sdspAdmissionApplication",
-                JSON.stringify(
-                    application
-                )
-            );
-
-
-            showMessage(
-                `
-                <strong>Profile Saved Successfully.</strong><br>
-                Your information has been saved.
-                You can now continue to the payment stage.
-                `,
-                "success"
-            );
-
+            /* =========================================
+               DISABLE BUTTON
+            ========================================= */
 
             const button =
                 document.getElementById(
@@ -553,20 +553,233 @@ if (profileForm) {
                 );
 
 
-            button.innerHTML =
-                "Proceed to Payment <span>→</span>";
+            if (button) {
+
+                button.disabled = true;
+
+                button.innerHTML =
+                    "Saving Profile...";
+
+            }
 
 
-            button.onclick =
-                function() {
+            showMessage(
+                "Saving your profile information...",
+                "success"
+            );
 
-                    window.location.href =
-                        "payment.html";
 
-                };
+            /* =========================================
+               GOOGLE SHEET DATA
+            ========================================= */
+
+            const profileData = {
+
+                action:
+                    "studentProfile",
+
+                applicationId:
+                    application.applicationId ||
+                    application.applicationNumber ||
+                    "",
+
+                studentId:
+                    application.studentId ||
+                    "",
+
+                fatherName:
+                    profile.fatherName,
+
+                motherName:
+                    profile.motherName,
+
+                dob:
+                    profile.dob,
+
+                gender:
+                    profile.gender,
+
+                category:
+                    profile.category,
+
+                aadhaar:
+                    profile.aadhaar,
+
+                address:
+                    profile.address,
+
+                board:
+                    profile.board,
+
+                passingYear:
+                    profile.passingYear,
+
+                marks:
+                    profile.marks,
+
+                rollNumber:
+                    profile.rollNumber,
+
+                profileStatus:
+                    "Completed",
+
+                submittedAt:
+                    new Date().toISOString()
+
+            };
+
+
+            /* =========================================
+               SEND PROFILE TO GOOGLE SHEET
+            ========================================= */
+
+            try {
+
+                const response =
+                    await fetch(
+                        GOOGLE_SCRIPT_URL,
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "text/plain;charset=utf-8"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    profileData
+                                )
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (!result.success) {
+
+                    throw new Error(
+                        result.message ||
+                        "Unable to save student profile."
+                    );
+
+                }
+
+
+                /* =========================================
+                   SAVE LOCALLY
+                ========================================= */
+
+                application.profile =
+                    profile;
+
+
+                application.documents =
+                    documents;
+
+
+                application.profileStatus =
+                    "Completed";
+
+
+                application.documentsStatus =
+                    "Pending";
+
+
+                application.status =
+                    "Documents Pending";
+
+
+                application.profileCompletedAt =
+                    new Date().toISOString();
+
+
+                localStorage.setItem(
+                    "sdspAdmissionApplication",
+                    JSON.stringify(
+                        application
+                    )
+                );
+
+
+                /* =========================================
+                   SUCCESS MESSAGE
+                ========================================= */
+
+                showMessage(
+                    `
+                    <strong>Profile Saved Successfully!</strong>
+                    <br><br>
+                    Your student profile has been submitted.
+                    <br><br>
+                    Next step:
+                    <strong>Document Submission</strong>.
+                    `,
+                    "success"
+                );
+
+
+                /* =========================================
+                   NEXT BUTTON
+                ========================================= */
+
+                if (button) {
+
+                    button.disabled = false;
+
+                    button.innerHTML =
+                        "Proceed to Documents <span>→</span>";
+
+
+                    button.onclick =
+                        function() {
+
+                            window.location.href =
+                                "documents.html";
+
+                        };
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "Profile submission error:",
+                    error
+                );
+
+
+                showMessage(
+                    `
+                    <strong>Unable to Save Profile</strong>
+                    <br><br>
+                    There was a problem connecting to
+                    the admission database.
+                    <br><br>
+                    Please check your internet connection
+                    and try again.
+                    `,
+                    "error"
+                );
+
+
+                if (button) {
+
+                    button.disabled = false;
+
+                    button.innerHTML =
+                        "Save Student Profile <span>→</span>";
+
+                }
+
+            }
 
         }
     );
+
 }
 
 
@@ -589,10 +802,12 @@ function getFileName(inputId) {
     ) {
 
         return null;
+
     }
 
 
     return input.files[0].name;
+
 }
 
 
@@ -625,8 +840,11 @@ function showMessage(
 
 
     window.scrollTo({
+
         top: 250,
+
         behavior: "smooth"
+
     });
 
 }
