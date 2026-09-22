@@ -9,7 +9,6 @@ const loginForm = document.getElementById("studentLoginForm");
 const loginBtn = document.getElementById("loginBtn");
 const loginMessage = document.getElementById("loginMessage");
 
-
 // =========================================
 // SHOW MESSAGE
 // =========================================
@@ -26,7 +25,6 @@ function showLoginMessage(message, type) {
     loginMessage.style.display = "block";
 }
 
-
 // =========================================
 // LOGIN FORM
 // =========================================
@@ -39,20 +37,17 @@ if (loginForm) {
 
             event.preventDefault();
 
-
             const studentId =
                 document
                     .getElementById("studentId")
                     .value
                     .trim();
 
-
             const password =
                 document
                     .getElementById("password")
                     .value
                     .trim();
-
 
             // =========================================
             // VALIDATION
@@ -68,22 +63,17 @@ if (loginForm) {
                 return;
             }
 
-
             // =========================================
             // DISABLE BUTTON
             // =========================================
 
             loginBtn.disabled = true;
-
-            loginBtn.textContent =
-                "Logging in...";
-
+            loginBtn.textContent = "Logging in...";
 
             showLoginMessage(
                 "Checking your login details...",
                 "info"
             );
-
 
             // =========================================
             // SEND LOGIN REQUEST
@@ -102,25 +92,22 @@ if (loginForm) {
                                     "text/plain;charset=utf-8"
                             },
 
-                            body:
-                                JSON.stringify({
+                            body: JSON.stringify({
 
-                                    action: "login",
+                                action: "login",
 
-                                    studentId:
-                                        studentId,
+                                studentId:
+                                    studentId,
 
-                                    password:
-                                        password
+                                password:
+                                    password
 
-                                })
+                            })
                         }
                     );
 
-
                 const result =
                     await response.json();
-
 
                 // =========================================
                 // LOGIN SUCCESS
@@ -133,8 +120,6 @@ if (loginForm) {
                         "success"
                     );
 
-
-                    // Save logged-in student
                     localStorage.setItem(
                         "sdspLoggedInStudent",
                         JSON.stringify(
@@ -145,8 +130,6 @@ if (loginForm) {
                         )
                     );
 
-
-                    // Save application if backend sends it
                     if (result.application) {
 
                         localStorage.setItem(
@@ -157,7 +140,6 @@ if (loginForm) {
                         );
 
                     }
-
 
                     // Open Student Profile
                     setTimeout(
@@ -170,10 +152,8 @@ if (loginForm) {
                         1000
                     );
 
-
                     return;
                 }
-
 
                 // =========================================
                 // LOGIN FAILED
@@ -185,12 +165,8 @@ if (loginForm) {
                     "error"
                 );
 
-
                 loginBtn.disabled = false;
-
-                loginBtn.textContent =
-                    "Login";
-
+                loginBtn.textContent = "Login";
 
             } catch (error) {
 
@@ -199,21 +175,15 @@ if (loginForm) {
                     error
                 );
 
-
                 showLoginMessage(
                     "Unable to connect to the admission database. Please try again.",
                     "error"
                 );
 
-
                 loginBtn.disabled = false;
-
-                loginBtn.textContent =
-                    "Login";
-
+                loginBtn.textContent = "Login";
             }
 
         }
     );
-
 }
