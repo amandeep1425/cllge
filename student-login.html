@@ -1,128 +1,388 @@
-const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxp1t5L3GCP2QDqE3FRuIim3tmGNdTi3HcJCR-wg3x-xxtS7Mhm87BFsmg2w9tMr5WK/exec";
+<!DOCTYPE html>
+<html lang="en">
 
-const loginForm = document.getElementById("studentLoginForm");
-const loginBtn = document.getElementById("loginBtn");
-const loginMessage = document.getElementById("loginMessage");
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-function showLoginMessage(message, type) {
+    <title>Student Login | SDSP Memorial College</title>
 
-    if (!loginMessage) return;
+    <link rel="stylesheet" href="style.css">
 
-    loginMessage.textContent = message;
-    loginMessage.className = "login-message " + type;
-    loginMessage.style.display = "block";
-}
-
-if (loginForm) {
-
-    loginForm.addEventListener("submit", async function (event) {
-
-        event.preventDefault();
-
-        const studentId =
-            document.getElementById("studentId").value.trim();
-
-        const password =
-            document.getElementById("password").value.trim();
-
-        if (!studentId || !password) {
-
-            showLoginMessage(
-                "Please enter Student ID and Password.",
-                "error"
-            );
-
-            return;
+    <style>
+        .login-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: #f5f7fb;
         }
 
-        loginBtn.disabled = true;
-        loginBtn.textContent = "Logging in...";
-
-        showLoginMessage(
-            "Checking your login details...",
-            "info"
-        );
-
-        try {
-
-            const response = await fetch(
-                GOOGLE_SCRIPT_URL,
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "text/plain;charset=utf-8"
-                    },
-
-                    body: JSON.stringify({
-                        action: "login",
-                        studentId: studentId,
-                        password: password
-                    })
-                }
-            );
-
-            const result = await response.json();
-
-            if (result.success) {
-
-                showLoginMessage(
-                    "Login successful. Opening your profile...",
-                    "success"
-                );
-
-                localStorage.setItem(
-                    "sdspLoggedInStudent",
-                    JSON.stringify(
-                        result.student || {
-                            studentId: studentId
-                        }
-                    )
-                );
-
-                if (result.application) {
-
-                    localStorage.setItem(
-                        "sdspAdmissionApplication",
-                        JSON.stringify(
-                            result.application
-                        )
-                    );
-                }
-
-                setTimeout(function () {
-
-                    window.location.href =
-                        "student-profile.html";
-
-                }, 1000);
-
-                return;
-            }
-
-            showLoginMessage(
-                result.message ||
-                "Invalid Student ID or Password.",
-                "error"
-            );
-
-            loginBtn.disabled = false;
-            loginBtn.textContent = "Login";
-
-        } catch (error) {
-
-            console.error("Student login error:", error);
-
-            showLoginMessage(
-                "Unable to connect to the admission database. Please try again.",
-                "error"
-            );
-
-            loginBtn.disabled = false;
-            loginBtn.textContent = "Login";
+        .login-card {
+            width: 100%;
+            max-width: 450px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
         }
 
-    });
-}
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .login-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .login-form-group {
+            margin-bottom: 20px;
+        }
+
+        .login-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .login-form-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d5d9e0;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .login-form-group input:focus {
+            outline: none;
+            border-color: #1d4ed8;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #1d4ed8;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            opacity: 0.92;
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .login-message {
+            display: none;
+            margin-top: 18px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login-message.success {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .login-message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .login-message.info {
+            display: block;
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .new-student-box {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .new-student-box p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .new-student-box a {
+            color: #1d4ed8;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .new-student-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                <img
+                    src="logoo.png"
+                    alt="SDSP Memorial College Logo"
+                >
+            </a>
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+            <nav id="mainNav">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="courses.html">Courses</a>
+
+                <a href="departments.html">Departments</a>
+
+                <a href="facilities.html">Facilities</a>
+
+                <a href="gallery.html">Gallery</a>
+
+                <div class="dropdown">
+
+                    <a href="#" class="dropbtn">
+                        Student Corner ▾
+                    </a>
+
+                    <div class="dropdown-content">
+
+                        <a href="admission.html">
+                            Online Admission
+                        </a>
+
+                        <a href="entrance-test.html">
+                            Entrance Test
+                        </a>
+
+                        <a href="student-profile.html">
+                            Student Profile
+                        </a>
+
+                        <a href="student-login.html">
+                            Student Login
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <h1>Student Login</h1>
+
+            <p>
+                Login to access your student profile
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOGIN -->
+
+    <section class="login-section">
+
+        <div class="login-card">
+
+            <h2>
+                Existing Student Login
+            </h2>
+
+            <p class="login-subtitle">
+                Enter your Student ID and Password
+            </p>
+
+            <form id="studentLoginForm">
+
+                <div class="login-form-group">
+
+                    <label for="studentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        placeholder="Enter your Student ID"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+                <div class="login-form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your Password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                    id="loginBtn"
+                >
+                    Login
+                </button>
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                ></div>
+
+            </form>
+
+            <div class="new-student-box">
+
+                <p>
+                    New student?
+                </p>
+
+                <a href="admission.html">
+                    Apply for Online Admission
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+
+                    <h3>
+                        SDSP Memorial College for Women
+                    </h3>
+
+                    <p>
+                        Rayya, District Amritsar, Punjab
+                    </p>
+
+                    <p>
+                        Email: sdspmcfwr@gmail.com
+                    </p>
+
+                    <p>
+                        Phone: +91 1853 222403
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="courses.html">
+                        Courses
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 SDSP Memorial College for Women.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+    <script src="student-login.js"></script>
+
+</body>
+
+</html>
