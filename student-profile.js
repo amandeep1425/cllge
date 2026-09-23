@@ -1,6 +1,6 @@
 /* =========================================
-   SDSP STUDENT PROFILE - PART 4
-   GOOGLE SHEET INTEGRATION
+   SDSP STUDENT PROFILE
+   COMPLETE GOOGLE SHEET INTEGRATION
 ========================================= */
 
 
@@ -9,7 +9,7 @@
 ========================================= */
 
 const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxp1t5L3GCP2QDqE3FRuIim3tmGNdTiHcJCR-wg3x-xxtS7Mhm87BFsmg2w9tMr5WK/exec";
+    "https://script.google.com/macros/s/AKfycbxp1t5L3GCP2QDqE3FRuIim3tmGNdTiHcJCR-wg3x-xxtS7Mhm87BFsmg2w9tMr5WK/exec";
 
 
 /* =========================================
@@ -44,6 +44,21 @@ function getApplication() {
 
 
 /* =========================================
+   CHECK EXISTING STUDENT LOGIN
+========================================= */
+
+function isExistingStudent() {
+
+    const loggedInStudent =
+        localStorage.getItem(
+            "sdspLoggedInStudent"
+        );
+
+    return !!loggedInStudent;
+}
+
+
+/* =========================================
    LOAD APPLICATION
 ========================================= */
 
@@ -51,7 +66,6 @@ function loadApplication() {
 
     const application =
         getApplication();
-
 
     if (!application) {
 
@@ -73,41 +87,76 @@ function loadApplication() {
     }
 
 
-    document.getElementById(
-        "applicationNumber"
-    ).textContent =
-        application.applicationId ||
-        application.applicationNumber ||
-        "-";
+    /* =========================================
+       APPLICATION SUMMARY
+    ========================================= */
+
+    const applicationNumber =
+        document.getElementById(
+            "applicationNumber"
+        );
+
+    if (applicationNumber) {
+
+        applicationNumber.textContent =
+            application.applicationId ||
+            application.applicationNumber ||
+            "-";
+    }
 
 
-    document.getElementById(
-        "studentName"
-    ).textContent =
-        application.studentName ||
-        "-";
+    const studentName =
+        document.getElementById(
+            "studentName"
+        );
+
+    if (studentName) {
+
+        studentName.textContent =
+            application.studentName ||
+            "-";
+    }
 
 
-    document.getElementById(
-        "studentCourse"
-    ).textContent =
-        application.course ||
-        "-";
+    const studentCourse =
+        document.getElementById(
+            "studentCourse"
+        );
+
+    if (studentCourse) {
+
+        studentCourse.textContent =
+            application.course ||
+            "-";
+    }
 
 
-    document.getElementById(
-        "testStatus"
-    ).textContent =
-        application.testStatus ||
-        "-";
+    const testStatus =
+        document.getElementById(
+            "testStatus"
+        );
+
+    if (testStatus) {
+
+        testStatus.textContent =
+            application.testStatus ||
+            "Not Required";
+    }
 
 
     /* =========================================
-       CHECK ENTRANCE TEST STATUS
+       EXISTING STUDENT
+       
+       Existing students login directly
+       and DO NOT need entrance test.
+    ========================================= */
 
-       Supports:
-       "Passed"
-       "Test Passed"
+    const existingStudent =
+        isExistingStudent();
+
+
+    /* =========================================
+       NEW STUDENT TEST CHECK
     ========================================= */
 
     const testPassed =
@@ -115,7 +164,7 @@ function loadApplication() {
         application.testStatus === "Test Passed";
 
 
-    if (!testPassed) {
+    if (!existingStudent && !testPassed) {
 
         showMessage(
             "Your entrance test has not been cleared. You cannot continue with the profile at this stage.",
@@ -145,70 +194,131 @@ function loadApplication() {
             application.profile;
 
 
-        document.getElementById(
-            "fatherName"
-        ).value =
-            profile.fatherName || "";
+        const fatherName =
+            document.getElementById(
+                "fatherName"
+            );
+
+        if (fatherName) {
+            fatherName.value =
+                profile.fatherName || "";
+        }
 
 
-        document.getElementById(
-            "motherName"
-        ).value =
-            profile.motherName || "";
+        const motherName =
+            document.getElementById(
+                "motherName"
+            );
+
+        if (motherName) {
+            motherName.value =
+                profile.motherName || "";
+        }
 
 
-        document.getElementById(
-            "dob"
-        ).value =
-            profile.dob || "";
+        const dob =
+            document.getElementById(
+                "dob"
+            );
+
+        if (dob) {
+            dob.value =
+                profile.dob ||
+                profile.dateOfBirth ||
+                "";
+        }
 
 
-        document.getElementById(
-            "gender"
-        ).value =
-            profile.gender || "";
+        const gender =
+            document.getElementById(
+                "gender"
+            );
+
+        if (gender) {
+            gender.value =
+                profile.gender || "";
+        }
 
 
-        document.getElementById(
-            "category"
-        ).value =
-            profile.category || "";
+        const category =
+            document.getElementById(
+                "category"
+            );
+
+        if (category) {
+            category.value =
+                profile.category || "";
+        }
 
 
-        document.getElementById(
-            "aadhaar"
-        ).value =
-            profile.aadhaar || "";
+        const aadhaar =
+            document.getElementById(
+                "aadhaar"
+            );
+
+        if (aadhaar) {
+            aadhaar.value =
+                profile.aadhaar || "";
+        }
 
 
-        document.getElementById(
-            "address"
-        ).value =
-            profile.address || "";
+        const address =
+            document.getElementById(
+                "address"
+            );
+
+        if (address) {
+            address.value =
+                profile.address || "";
+        }
 
 
-        document.getElementById(
-            "board"
-        ).value =
-            profile.board || "";
+        const board =
+            document.getElementById(
+                "board"
+            );
+
+        if (board) {
+            board.value =
+                profile.board ||
+                profile.boardUniversity ||
+                "";
+        }
 
 
-        document.getElementById(
-            "passingYear"
-        ).value =
-            profile.passingYear || "";
+        const passingYear =
+            document.getElementById(
+                "passingYear"
+            );
+
+        if (passingYear) {
+            passingYear.value =
+                profile.passingYear || "";
+        }
 
 
-        document.getElementById(
-            "marks"
-        ).value =
-            profile.marks || "";
+        const marks =
+            document.getElementById(
+                "marks"
+            );
+
+        if (marks) {
+            marks.value =
+                profile.marks ||
+                profile.marksPercentage ||
+                "";
+        }
 
 
-        document.getElementById(
-            "rollNumber"
-        ).value =
-            profile.rollNumber || "";
+        const rollNumber =
+            document.getElementById(
+                "rollNumber"
+            );
+
+        if (rollNumber) {
+            rollNumber.value =
+                profile.rollNumber || "";
+        }
 
     }
 
@@ -228,7 +338,6 @@ function validateFile(
         document.getElementById(
             inputId
         );
-
 
     if (!input) {
         return false;
@@ -337,15 +446,27 @@ if (profileForm) {
 
 
             /* =========================================
-               CHECK TEST STATUS
+               EXISTING / NEW STUDENT CHECK
             ========================================= */
+
+            const existingStudent =
+                isExistingStudent();
+
 
             const testPassed =
                 application.testStatus === "Passed" ||
                 application.testStatus === "Test Passed";
 
 
-            if (!testPassed) {
+            /*
+               Existing student:
+               NO entrance test required.
+
+               New student:
+               Entrance test MUST be passed.
+            */
+
+            if (!existingStudent && !testPassed) {
 
                 showMessage(
                     "You must pass the entrance test before completing your profile.",
@@ -440,6 +561,7 @@ if (profileForm) {
                         .value
                         .trim(),
 
+
                 motherName:
                     document
                         .getElementById(
@@ -448,12 +570,14 @@ if (profileForm) {
                         .value
                         .trim(),
 
+
                 dob:
                     document
                         .getElementById(
                             "dob"
                         )
                         .value,
+
 
                 gender:
                     document
@@ -462,6 +586,7 @@ if (profileForm) {
                         )
                         .value,
 
+
                 category:
                     document
                         .getElementById(
@@ -469,8 +594,10 @@ if (profileForm) {
                         )
                         .value,
 
+
                 aadhaar:
                     aadhaar,
+
 
                 address:
                     document
@@ -480,6 +607,7 @@ if (profileForm) {
                         .value
                         .trim(),
 
+
                 board:
                     document
                         .getElementById(
@@ -488,6 +616,7 @@ if (profileForm) {
                         .value
                         .trim(),
 
+
                 passingYear:
                     document
                         .getElementById(
@@ -495,12 +624,14 @@ if (profileForm) {
                         )
                         .value,
 
+
                 marks:
                     document
                         .getElementById(
                             "marks"
                         )
                         .value,
+
 
                 rollNumber:
                     document
@@ -515,25 +646,30 @@ if (profileForm) {
 
             /* =========================================
                DOCUMENT INFORMATION
-
-               Actual files are not uploaded here yet.
+               
+               Actual files are not uploaded yet.
                File names are stored for now.
             ========================================= */
 
             const documents = {
 
                 photo:
-                    getFileName("photo"),
+                    getFileName(
+                        "photo"
+                    ),
+
 
                 aadhaar:
                     getFileName(
                         "aadhaarDocument"
                     ),
 
+
                 qualification:
                     getFileName(
                         "qualificationDocument"
                     ),
+
 
                 category:
                     getFileName(
@@ -578,50 +714,65 @@ if (profileForm) {
                 action:
                     "studentProfile",
 
+
                 applicationId:
                     application.applicationId ||
                     application.applicationNumber ||
                     "",
 
+
                 studentId:
                     application.studentId ||
                     "",
 
+
                 fatherName:
                     profile.fatherName,
+
 
                 motherName:
                     profile.motherName,
 
-                dob:
+
+                dateOfBirth:
                     profile.dob,
+
 
                 gender:
                     profile.gender,
 
+
                 category:
                     profile.category,
+
 
                 aadhaar:
                     profile.aadhaar,
 
+
                 address:
                     profile.address,
 
-                board:
+
+                boardUniversity:
                     profile.board,
+
 
                 passingYear:
                     profile.passingYear,
 
-                marks:
+
+                marksPercentage:
                     profile.marks,
+
 
                 rollNumber:
                     profile.rollNumber,
 
+
                 profileStatus:
                     "Completed",
+
 
                 submittedAt:
                     new Date().toISOString()
@@ -639,17 +790,24 @@ if (profileForm) {
                     await fetch(
                         GOOGLE_SCRIPT_URL,
                         {
-                            method: "POST",
+
+                            method:
+                                "POST",
+
 
                             headers: {
+
                                 "Content-Type":
                                     "text/plain;charset=utf-8"
+
                             },
+
 
                             body:
                                 JSON.stringify(
                                     profileData
                                 )
+
                         }
                     );
 
