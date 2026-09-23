@@ -9,6 +9,7 @@ const loginForm = document.getElementById("studentLoginForm");
 const loginBtn = document.getElementById("loginBtn");
 const loginMessage = document.getElementById("loginMessage");
 
+
 // =========================================
 // SHOW MESSAGE
 // =========================================
@@ -24,6 +25,7 @@ function showLoginMessage(message, type) {
 
     loginMessage.style.display = "block";
 }
+
 
 // =========================================
 // LOGIN FORM
@@ -49,6 +51,7 @@ if (loginForm) {
                     .value
                     .trim();
 
+
             // =========================================
             // VALIDATION
             // =========================================
@@ -63,6 +66,7 @@ if (loginForm) {
                 return;
             }
 
+
             // =========================================
             // DISABLE BUTTON
             // =========================================
@@ -74,6 +78,7 @@ if (loginForm) {
                 "Checking your login details...",
                 "info"
             );
+
 
             // =========================================
             // SEND LOGIN REQUEST
@@ -106,8 +111,10 @@ if (loginForm) {
                         }
                     );
 
+
                 const result =
                     await response.json();
+
 
                 // =========================================
                 // LOGIN SUCCESS
@@ -120,6 +127,7 @@ if (loginForm) {
                         "success"
                     );
 
+
                     localStorage.setItem(
                         "sdspLoggedInStudent",
                         JSON.stringify(
@@ -129,6 +137,7 @@ if (loginForm) {
                             }
                         )
                     );
+
 
                     if (result.application) {
 
@@ -141,7 +150,9 @@ if (loginForm) {
 
                     }
 
+
                     // Open Student Profile
+
                     setTimeout(
                         function () {
 
@@ -155,6 +166,7 @@ if (loginForm) {
                     return;
                 }
 
+
                 // =========================================
                 // LOGIN FAILED
                 // =========================================
@@ -165,10 +177,18 @@ if (loginForm) {
                     "error"
                 );
 
+
                 loginBtn.disabled = false;
                 loginBtn.textContent = "Login";
 
-            } catch (error) {
+            }
+
+
+            // =========================================
+            // CONNECTION ERROR
+            // =========================================
+
+            catch (error) {
 
                 console.error(
                     "Student login error:",
@@ -186,4 +206,5 @@ if (loginForm) {
 
         }
     );
+
 }
