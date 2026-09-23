@@ -1,18 +1,15 @@
-// =========================================
-// SDSP STUDENT LOGIN
-// =========================================
-
 const GOOGLE_SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbxp1t5L3GCP2QDqE3FRuIim3tmGNdTi3HcJCR-wg3x-xxtS7Mhm87BFsmg2w9tMr5WK/exec";
 
-const loginForm = document.getElementById("studentLoginForm");
-const loginBtn = document.getElementById("loginBtn");
-const loginMessage = document.getElementById("loginMessage");
+const loginForm =
+    document.getElementById("studentLoginForm");
 
+const loginBtn =
+    document.getElementById("loginBtn");
 
-// =========================================
-// SHOW MESSAGE
-// =========================================
+const loginMessage =
+    document.getElementById("loginMessage");
+
 
 function showLoginMessage(message, type) {
 
@@ -27,10 +24,6 @@ function showLoginMessage(message, type) {
 }
 
 
-// =========================================
-// LOGIN FORM
-// =========================================
-
 if (loginForm) {
 
     loginForm.addEventListener(
@@ -39,11 +32,13 @@ if (loginForm) {
 
             event.preventDefault();
 
+
             const studentId =
                 document
                     .getElementById("studentId")
                     .value
                     .trim();
+
 
             const password =
                 document
@@ -51,10 +46,6 @@ if (loginForm) {
                     .value
                     .trim();
 
-
-            // =========================================
-            // VALIDATION
-            // =========================================
 
             if (!studentId || !password) {
 
@@ -67,22 +58,17 @@ if (loginForm) {
             }
 
 
-            // =========================================
-            // DISABLE BUTTON
-            // =========================================
-
             loginBtn.disabled = true;
-            loginBtn.textContent = "Logging in...";
+
+            loginBtn.textContent =
+                "Logging in...";
+
 
             showLoginMessage(
                 "Checking your login details...",
                 "info"
             );
 
-
-            // =========================================
-            // SEND LOGIN REQUEST
-            // =========================================
 
             try {
 
@@ -116,10 +102,6 @@ if (loginForm) {
                     await response.json();
 
 
-                // =========================================
-                // LOGIN SUCCESS
-                // =========================================
-
                 if (result.success) {
 
                     showLoginMessage(
@@ -151,8 +133,6 @@ if (loginForm) {
                     }
 
 
-                    // Open Student Profile
-
                     setTimeout(
                         function () {
 
@@ -163,13 +143,10 @@ if (loginForm) {
                         1000
                     );
 
+
                     return;
                 }
 
-
-                // =========================================
-                // LOGIN FAILED
-                // =========================================
 
                 showLoginMessage(
                     result.message ||
@@ -179,29 +156,29 @@ if (loginForm) {
 
 
                 loginBtn.disabled = false;
-                loginBtn.textContent = "Login";
 
-            }
+                loginBtn.textContent =
+                    "Login";
 
 
-            // =========================================
-            // CONNECTION ERROR
-            // =========================================
-
-            catch (error) {
+            } catch (error) {
 
                 console.error(
                     "Student login error:",
                     error
                 );
 
+
                 showLoginMessage(
                     "Unable to connect to the admission database. Please try again.",
                     "error"
                 );
 
+
                 loginBtn.disabled = false;
-                loginBtn.textContent = "Login";
+
+                loginBtn.textContent =
+                    "Login";
             }
 
         }
