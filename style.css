@@ -1,4 +1,12 @@
-/* ================= GENERAL STYLING ================= */
+/* =========================================================
+   SDSP MEMORIAL COLLEGE FOR WOMEN
+   MAIN WEBSITE CSS
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
 
 * {
     margin: 0;
@@ -8,11 +16,14 @@
 
 :root {
     --primary: #173f73;
+    --primary-dark: #102f57;
     --secondary: #d6a84f;
+    --secondary-dark: #bd8d35;
     --dark: #172b45;
     --light: #f5f7fa;
     --white: #ffffff;
     --text: #555555;
+    --border: #e3e8ef;
 }
 
 html {
@@ -29,10 +40,18 @@ body {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 a {
     text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
 }
 
 .container {
@@ -42,7 +61,40 @@ a {
 }
 
 
-/* ================= NAVBAR ================= */
+/* =========================================================
+   BOOTSTRAP COMPATIBILITY
+   ========================================================= */
+
+.btn {
+    text-decoration: none !important;
+}
+
+.navbar-brand {
+    text-decoration: none !important;
+}
+
+.navbar-brand:hover {
+    text-decoration: none !important;
+}
+
+.dropdown-menu {
+    border: 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dropdown-item {
+    transition: 0.25s ease;
+}
+
+.dropdown-item:hover {
+    background: #edf3fa;
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   NAVBAR - OLD / CUSTOM NAVBAR
+   ========================================================= */
 
 header.navbar {
     width: 100%;
@@ -51,7 +103,7 @@ header.navbar {
     background: #ffffff;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
     position: relative;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .nav-container {
@@ -113,7 +165,7 @@ header.navbar {
 
 .nav-links a.admission-link {
     background: var(--primary);
-    color: white;
+    color: #ffffff;
     padding: 10px 16px;
     border-radius: 5px;
 }
@@ -124,14 +176,99 @@ header.navbar {
 }
 
 
-/* ================= HERO SECTION ================= */
+/* =========================================================
+   BOOTSTRAP NAVBAR
+   ========================================================= */
+
+body > header:not(.navbar) {
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar.navbar-expand-lg {
+    min-height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #ffffff !important;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.navbar.navbar-expand-lg .navbar-brand {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.navbar.navbar-expand-lg .navbar-brand img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.navbar.navbar-expand-lg .nav-link {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.25s ease;
+}
+
+.navbar.navbar-expand-lg .nav-link:hover,
+.navbar.navbar-expand-lg .nav-link.active {
+    color: var(--secondary);
+}
+
+.navbar.navbar-expand-lg .btn-success {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.navbar.navbar-expand-lg .btn-success:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(23, 63, 115, 0.25);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.15rem rgba(23, 63, 115, 0.15);
+}
+
+.dropdown-menu {
+    min-width: 220px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.dropdown-header {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.dropdown-item {
+    border-radius: 5px;
+    padding: 9px 12px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero {
     position: relative;
     width: 100%;
     height: 620px;
     overflow: hidden;
-    background: #172b45;
+    background: var(--dark);
 }
 
 .hero-slider {
@@ -239,6 +376,7 @@ header.navbar {
 .hero-buttons .btn-primary:hover,
 .cta-buttons .btn-primary:hover {
     background: #245895;
+    border-color: #245895;
 }
 
 .hero-buttons .admission-btn,
@@ -250,7 +388,8 @@ header.navbar {
 
 .hero-buttons .admission-btn:hover,
 .cta-buttons .admission-btn:hover {
-    background: #bd8d35;
+    background: var(--secondary-dark);
+    border-color: var(--secondary-dark);
 }
 
 .hero-buttons .btn-outline {
@@ -265,7 +404,9 @@ header.navbar {
 }
 
 
-/* ================= SLIDER BUTTONS ================= */
+/* =========================================================
+   SLIDER CONTROLS
+   ========================================================= */
 
 .slider-btn {
     position: absolute;
@@ -295,9 +436,6 @@ header.navbar {
     right: 20px;
 }
 
-
-/* ================= SLIDER DOTS ================= */
-
 .slider-dots {
     position: absolute;
     bottom: 25px;
@@ -325,7 +463,105 @@ header.navbar {
 }
 
 
-/* ================= WELCOME SECTION ================= */
+/* =========================================================
+   COMMON PAGE HERO
+   For About / Courses / Departments / Facilities / Gallery
+   ========================================================= */
+
+.page-hero {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            rgba(16, 47, 87, 0.88),
+            rgba(16, 47, 87, 0.88)
+        );
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.page-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 47, 87, 0.78);
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+/* =========================================================
+   COMMON INNER PAGE
+   ========================================================= */
+
+.page-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.page-section:nth-of-type(even) {
+    background: var(--light);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.page-title span {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.page-title h2 {
+    color: var(--primary);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.page-title p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #666666;
+}
+
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
 
 .home-welcome {
     padding: 90px 0;
@@ -394,7 +630,9 @@ header.navbar {
 }
 
 
-/* ================= EXPLORE SECTION ================= */
+/* =========================================================
+   EXPLORE
+   ========================================================= */
 
 .home-links {
     padding: 85px 0;
@@ -425,14 +663,9 @@ header.navbar {
     font-size: 16px;
 }
 
-
-/* Bootstrap row and column layout */
-
 .home-link-grid {
     align-items: stretch;
 }
-
-/* College cards */
 
 .home-link-card {
     height: 100%;
@@ -443,8 +676,10 @@ header.navbar {
     border-radius: 9px;
     color: var(--text);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s, box-shadow 0.3s,
-                border-color 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
 }
 
 .home-link-card:hover {
@@ -491,7 +726,7 @@ header.navbar {
 }
 
 .home-link-card:hover > span {
-    color: #bd8d35;
+    color: var(--secondary-dark);
 }
 
 .home-link-card.admission-card {
@@ -515,7 +750,210 @@ header.navbar {
 }
 
 
-/* ================= CALL TO ACTION ================= */
+/* =========================================================
+   COMMON CONTENT CARDS
+   ========================================================= */
+
+.content-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    transition: 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+    border-color: rgba(214, 168, 79, 0.6);
+}
+
+.content-card h3,
+.content-card h4 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.content-card p {
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.content-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.content-card li {
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   COURSES / DEPARTMENTS / FACILITIES CARDS
+   ========================================================= */
+
+.course-card,
+.department-card,
+.facility-card {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.course-card:hover,
+.department-card:hover,
+.facility-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.10);
+    border-color: var(--secondary);
+}
+
+.course-card img,
+.department-card img,
+.facility-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.course-card-body,
+.department-card-body,
+.facility-card-body {
+    padding: 25px;
+}
+
+.course-card h3,
+.department-card h3,
+.facility-card h3 {
+    color: var(--primary);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.course-card p,
+.department-card p,
+.facility-card p {
+    color: #666666;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   LIST / INFO SECTIONS
+   ========================================================= */
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    position: relative;
+    padding: 12px 0 12px 28px;
+    border-bottom: 1px solid #e9edf2;
+    color: #555555;
+}
+
+.info-list li:last-child {
+    border-bottom: 0;
+}
+
+.info-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-section {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(16, 47, 87, 0.45),
+        transparent 45%
+    );
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+
+/* Support common gallery image classes */
+
+.gallery-card {
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CALL TO ACTION
+   ========================================================= */
 
 .home-cta {
     padding: 75px 0;
@@ -563,7 +1001,91 @@ header.navbar {
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-section {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.contact-card {
+    height: 100%;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h3 {
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
+.contact-card p {
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    border: 1px solid #dce2e9;
+    border-radius: 6px;
+    padding: 11px 13px;
+    outline: none;
+    transition: 0.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 63, 115, 0.08);
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .footer {
     background: #10243d;
@@ -637,7 +1159,66 @@ header.navbar {
 }
 
 
-/* ================= TABLET RESPONSIVE ================= */
+/* =========================================================
+   GENERIC BUTTONS
+   ========================================================= */
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-success {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-success:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar.navbar-expand-lg .navbar-collapse {
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .navbar.navbar-expand-lg .navbar-nav {
+        align-items: stretch !important;
+    }
+
+    .navbar.navbar-expand-lg .nav-link {
+        padding: 10px 5px;
+    }
+
+    .navbar.navbar-expand-lg .dropdown-menu {
+        box-shadow: none;
+        border: 1px solid #eeeeee;
+    }
+
+    .navbar.navbar-expand-lg .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 992px) {
 
@@ -672,10 +1253,20 @@ header.navbar {
         grid-template-columns: 1fr 1fr;
         gap: 35px;
     }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero {
+        min-height: 270px;
+    }
 }
 
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 576px) {
 
@@ -792,6 +1383,45 @@ header.navbar {
         font-size: 20px;
     }
 
+    .page-section,
+    .gallery-section,
+    .contact-section {
+        padding: 55px 0;
+    }
+
+    .page-hero {
+        min-height: 230px;
+    }
+
+    .page-hero h1 {
+        font-size: 32px;
+    }
+
+    .page-hero p {
+        font-size: 14px;
+    }
+
+    .content-card,
+    .contact-card,
+    .contact-form {
+        padding: 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .gallery-card img {
+        height: 220px;
+    }
+
+    .course-card img,
+    .department-card img,
+    .facility-card img {
+        height: 200px;
+    }
+
     .home-cta {
         padding: 45px 0;
     }
@@ -803,6 +1433,10 @@ header.navbar {
 
     .cta-box h2 {
         font-size: 25px;
+    }
+
+    .cta-buttons {
+        width: 100%;
     }
 
     .cta-buttons .btn {
@@ -822,5 +1456,35 @@ header.navbar {
 
     .footer-bottom p {
         font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 27px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .slider-btn {
+        display: none;
     }
 }
