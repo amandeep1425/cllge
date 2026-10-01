@@ -2,196 +2,572 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Shaheed Darshan Singh Pheruman Memorial College</title>
 
-    <!-- Bootstrap CSS -->
+
+    <!-- Bootstrap 5.3 -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
+
     <!-- Your Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
 
-<header class="navbar">
-    <div class="container nav-container">
+<!-- =====================================================
+     BOOTSTRAP NAVBAR
+===================================================== -->
 
-        <a href="sdspc.html" class="logo">
-            <img src="logoo.png" alt="College Logo">
+<header>
 
-            <div>
-                <strong>SDSP Memorial College</strong>
-                <span>For Women</span>
-            </div>
-        </a>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
 
-        <nav class="nav-links">
-            <a href="sdspc.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="courses.html">Courses</a>
-            <a href="departments.html">Departments</a>
-            <a href="facilities.html">Facilities</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
+        <div class="container">
 
-            <a href="admission.html" class="admission-link">
-                Online Admission
+
+            <!-- LOGO -->
+
+            <a
+                href="sdspc.html"
+                class="navbar-brand d-flex align-items-center"
+            >
+
+                <img
+                    src="logoo.png"
+                    alt="College Logo"
+                    width="60"
+                    height="60"
+                    class="me-2"
+                >
+
+                <div>
+
+                    <strong class="d-block">
+                        SDSP Memorial College
+                    </strong>
+
+                    <span class="d-block">
+                        For Women
+                    </span>
+
+                </div>
+
             </a>
-        </nav>
 
-    </div>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+
+            <!-- NAVIGATION -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="mainNavbar"
+            >
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+
+                    <!-- HOME -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            aria-current="page"
+                            href="sdspc.html"
+                        >
+                            Home
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- ABOUT -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="about.html"
+                        >
+                            About
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- COURSES -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="courses.html"
+                        >
+                            Courses
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- DEPARTMENTS -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="departments.html"
+                        >
+                            Departments
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- FACILITIES -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="facilities.html"
+                        >
+                            Facilities
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- GALLERY -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="gallery.html"
+                        >
+                            Gallery
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- STUDENT CORNER -->
+
+                    <li class="nav-item dropdown">
+
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Student Corner
+                        </a>
+
+
+                        <ul class="dropdown-menu">
+
+
+                            <li>
+
+                                <h6 class="dropdown-header">
+                                    Student Services
+                                </h6>
+
+                            </li>
+
+
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="admission.html"
+                                >
+                                    Online Admission
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="entrance-test.html"
+                                >
+                                    Entrance Test
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="student-profile.html"
+                                >
+                                    Student Profile
+                                </a>
+
+                            </li>
+
+
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="student-login.html"
+                                >
+                                    Student Login
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+
+                    <!-- CONTACT -->
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="contact.html"
+                        >
+                            Contact
+                        </a>
+
+                    </li>
+
+
+
+                    <!-- ONLINE ADMISSION BUTTON -->
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+
+                        <a
+                            href="admission.html"
+                            class="btn btn-success px-3"
+                        >
+                            Online Admission
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
 </header>
 
 
-<!-- ================= HERO SLIDER ================= -->
+
+<!-- =====================================================
+     HERO SLIDER
+===================================================== -->
 
 <section class="hero">
 
     <div class="hero-slider">
 
+
         <!-- SLIDE 1 -->
+
         <div class="hero-slide active">
-            <img src="gate.jpeg" alt="College Campus">
+
+            <img
+                src="gate.jpeg"
+                alt="College Campus"
+            >
+
             <div class="hero-overlay"></div>
 
+
             <div class="hero-content">
-                <p class="hero-small">WELCOME TO</p>
+
+                <p class="hero-small">
+                    WELCOME TO
+                </p>
+
 
                 <h1>
                     Shaheed Darshan Singh
                     Pheruman Memorial College
                 </h1>
 
+
                 <p>
                     Empowering Women Through Quality Education
                 </p>
 
+
                 <div class="hero-buttons">
-                    <a href="courses.html" class="btn btn-primary">
+
+                    <a
+                        href="courses.html"
+                        class="btn btn-primary"
+                    >
                         Explore Courses
                     </a>
 
-                    <a href="admission.html"
-                       class="btn btn-success admission-btn">
+
+                    <a
+                        href="admission.html"
+                        class="btn btn-success admission-btn"
+                    >
                         Online Admission
                     </a>
 
-                    <a href="about.html"
-                       class="btn btn-outline-light btn-outline">
+
+                    <a
+                        href="about.html"
+                        class="btn btn-outline-light btn-outline"
+                    >
                         Discover Our College
                     </a>
+
                 </div>
+
             </div>
+
         </div>
 
 
+
         <!-- SLIDE 2 -->
+
         <div class="hero-slide">
-            <img src="clss.jpeg" alt="College Classroom">
+
+            <img
+                src="clss.jpeg"
+                alt="College Classroom"
+            >
+
             <div class="hero-overlay"></div>
 
-            <div class="hero-content">
-                <p class="hero-small">LEARN • GROW • ACHIEVE</p>
 
-                <h1>Education That Builds Confidence</h1>
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    LEARN • GROW • ACHIEVE
+                </p>
+
+
+                <h1>
+                    Education That Builds Confidence
+                </h1>
+
 
                 <p>
                     Creating opportunities for young women
                     through knowledge and skills.
                 </p>
+
             </div>
+
         </div>
 
 
+
         <!-- SLIDE 3 -->
+
         <div class="hero-slide">
-            <img src="library.jpg" alt="College Library">
+
+            <img
+                src="library.jpg"
+                alt="College Library"
+            >
+
             <div class="hero-overlay"></div>
 
-            <div class="hero-content">
-                <p class="hero-small">KNOWLEDGE IS POWER</p>
 
-                <h1>A Place To Learn And Grow</h1>
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    KNOWLEDGE IS POWER
+                </p>
+
+
+                <h1>
+                    A Place To Learn And Grow
+                </h1>
+
 
                 <p>
                     A supportive academic environment
                     for students.
                 </p>
+
             </div>
+
         </div>
 
 
+
         <!-- SLIDE 4 -->
+
         <div class="hero-slide">
-            <img src="rec.jpeg" alt="College Activities">
+
+            <img
+                src="rec.jpeg"
+                alt="College Activities"
+            >
+
             <div class="hero-overlay"></div>
 
-            <div class="hero-content">
-                <p class="hero-small">BEYOND THE CLASSROOM</p>
 
-                <h1>Learn. Participate. Succeed.</h1>
+            <div class="hero-content">
+
+                <p class="hero-small">
+                    BEYOND THE CLASSROOM
+                </p>
+
+
+                <h1>
+                    Learn. Participate. Succeed.
+                </h1>
+
 
                 <p>
                     Encouraging academic, cultural and
                     co-curricular development.
                 </p>
+
             </div>
+
         </div>
 
     </div>
 
 
+
     <!-- SLIDER BUTTONS -->
+
     <button
         class="slider-btn prev"
         onclick="changeSlide(-1)"
-        aria-label="Previous Slide">
+        aria-label="Previous Slide"
+    >
         &#10094;
     </button>
+
 
     <button
         class="slider-btn next"
         onclick="changeSlide(1)"
-        aria-label="Next Slide">
+        aria-label="Next Slide"
+    >
         &#10095;
     </button>
 
 
+
     <!-- SLIDER DOTS -->
+
     <div class="slider-dots">
-        <span class="dot active" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
+
+        <span
+            class="dot active"
+            onclick="currentSlide(1)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="currentSlide(2)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="currentSlide(3)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="currentSlide(4)"
+        ></span>
+
     </div>
 
 </section>
 
 
-<!-- ================= WELCOME ================= -->
+
+<!-- =====================================================
+     WELCOME
+===================================================== -->
 
 <section class="home-welcome">
 
     <div class="container welcome-content">
 
+
         <div class="welcome-image">
-            <img src="s.jpeg" alt="College Campus">
+
+            <img
+                src="s.jpeg"
+                alt="College Campus"
+            >
+
         </div>
+
 
         <div class="welcome-text">
 
-            <span class="section-label">WELCOME</span>
+            <span class="section-label">
+                WELCOME
+            </span>
 
-            <h2>Welcome to SDSP Memorial College</h2>
+
+            <h2>
+                Welcome to SDSP Memorial College
+            </h2>
+
 
             <p>
                 Shaheed Darshan Singh Pheruman Memorial College
@@ -200,13 +576,18 @@
                 development of its students.
             </p>
 
+
             <p>
                 The college provides a supportive environment
                 where students can develop knowledge, confidence,
                 skills and a sense of responsibility.
             </p>
 
-            <a href="about.html" class="text-btn">
+
+            <a
+                href="about.html"
+                class="text-btn"
+            >
                 Read About College →
             </a>
 
@@ -217,146 +598,283 @@
 </section>
 
 
-<!-- ================= EXPLORE COLLEGE ================= -->
+
+<!-- =====================================================
+     EXPLORE COLLEGE
+===================================================== -->
 
 <section class="home-links">
 
     <div class="container">
 
-        <div class="section-heading">
-            <span>EXPLORE</span>
 
-            <h2>Explore Our College</h2>
+        <div class="section-heading">
+
+            <span>
+                EXPLORE
+            </span>
+
+
+            <h2>
+                Explore Our College
+            </h2>
+
 
             <p>
                 Find detailed information through the sections
                 available in the navigation menu.
             </p>
+
         </div>
 
 
-        <!-- Bootstrap Responsive Grid -->
+
         <div class="home-link-grid row g-4">
 
-            <!-- ABOUT -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="about.html" class="home-link-card h-100 d-block">
-                    <div class="link-icon">01</div>
 
-                    <h3>About College</h3>
+            <!-- ABOUT -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <a
+                    href="about.html"
+                    class="home-link-card h-100 d-block"
+                >
+
+                    <div class="link-icon">
+                        01
+                    </div>
+
+
+                    <h3>
+                        About College
+                    </h3>
+
 
                     <p>
                         Learn about the college, its vision,
                         mission and history.
                     </p>
 
-                    <span>View More →</span>
+
+                    <span>
+                        View More →
+                    </span>
+
                 </a>
+
             </div>
 
 
-            <!-- COURSES -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="courses.html" class="home-link-card h-100 d-block">
-                    <div class="link-icon">02</div>
 
-                    <h3>Courses</h3>
+            <!-- COURSES -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <a
+                    href="courses.html"
+                    class="home-link-card h-100 d-block"
+                >
+
+                    <div class="link-icon">
+                        02
+                    </div>
+
+
+                    <h3>
+                        Courses
+                    </h3>
+
 
                     <p>
                         Explore undergraduate, postgraduate
                         and skill-based programmes.
                     </p>
 
-                    <span>View Courses →</span>
+
+                    <span>
+                        View Courses →
+                    </span>
+
                 </a>
+
             </div>
 
 
-            <!-- DEPARTMENTS -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="departments.html" class="home-link-card h-100 d-block">
-                    <div class="link-icon">03</div>
 
-                    <h3>Departments</h3>
+            <!-- DEPARTMENTS -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <a
+                    href="departments.html"
+                    class="home-link-card h-100 d-block"
+                >
+
+                    <div class="link-icon">
+                        03
+                    </div>
+
+
+                    <h3>
+                        Departments
+                    </h3>
+
 
                     <p>
                         Explore academic departments and
                         their faculty members.
                     </p>
 
-                    <span>View Departments →</span>
+
+                    <span>
+                        View Departments →
+                    </span>
+
                 </a>
+
             </div>
 
 
-            <!-- FACILITIES -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="facilities.html" class="home-link-card h-100 d-block">
-                    <div class="link-icon">04</div>
 
-                    <h3>Facilities</h3>
+            <!-- FACILITIES -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <a
+                    href="facilities.html"
+                    class="home-link-card h-100 d-block"
+                >
+
+                    <div class="link-icon">
+                        04
+                    </div>
+
+
+                    <h3>
+                        Facilities
+                    </h3>
+
 
                     <p>
                         Discover the facilities and services
                         available on campus.
                     </p>
 
-                    <span>View Facilities →</span>
+
+                    <span>
+                        View Facilities →
+                    </span>
+
                 </a>
+
             </div>
 
 
-            <!-- GALLERY -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="gallery.html" class="home-link-card h-100 d-block">
-                    <div class="link-icon">05</div>
 
-                    <h3>Gallery</h3>
+            <!-- GALLERY -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <a
+                    href="gallery.html"
+                    class="home-link-card h-100 d-block"
+                >
+
+                    <div class="link-icon">
+                        05
+                    </div>
+
+
+                    <h3>
+                        Gallery
+                    </h3>
+
 
                     <p>
                         View photographs and memories
                         from college activities.
                     </p>
 
-                    <span>Open Gallery →</span>
+
+                    <span>
+                        Open Gallery →
+                    </span>
+
                 </a>
+
             </div>
 
 
-            <!-- CONTACT -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="contact.html" class="home-link-card h-100 d-block">
-                    <div class="link-icon">06</div>
 
-                    <h3>Contact</h3>
+            <!-- CONTACT -->
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+                <a
+                    href="contact.html"
+                    class="home-link-card h-100 d-block"
+                >
+
+                    <div class="link-icon">
+                        06
+                    </div>
+
+
+                    <h3>
+                        Contact
+                    </h3>
+
 
                     <p>
                         Find the college address, phone
                         numbers and contact information.
                     </p>
 
-                    <span>Contact Us →</span>
+
+                    <span>
+                        Contact Us →
+                    </span>
+
                 </a>
+
             </div>
 
 
+
             <!-- ONLINE ADMISSION -->
+
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="admission.html"
-                   class="home-link-card admission-card h-100 d-block">
 
-                    <div class="link-icon">07</div>
+                <a
+                    href="admission.html"
+                    class="home-link-card admission-card h-100 d-block"
+                >
 
-                    <h3>Online Admission</h3>
+                    <div class="link-icon">
+                        07
+                    </div>
+
+
+                    <h3>
+                        Online Admission
+                    </h3>
+
 
                     <p>
                         Register online, complete the entrance
                         test and continue your admission process.
                     </p>
 
-                    <span>Apply Online →</span>
+
+                    <span>
+                        Apply Online →
+                    </span>
+
                 </a>
+
             </div>
+
 
         </div>
 
@@ -365,7 +883,10 @@
 </section>
 
 
-<!-- ================= CALL TO ACTION ================= -->
+
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
 
 <section class="home-cta">
 
@@ -373,21 +894,38 @@
 
         <div class="cta-box">
 
-            <div>
-                <span>YOUR JOURNEY STARTS HERE</span>
 
-                <h2>Learn. Grow. Build Your Future.</h2>
+            <div>
+
+                <span>
+                    YOUR JOURNEY STARTS HERE
+                </span>
+
+
+                <h2>
+                    Learn. Grow. Build Your Future.
+                </h2>
+
             </div>
 
+
             <div class="cta-buttons">
-                <a href="courses.html" class="btn btn-primary">
+
+                <a
+                    href="courses.html"
+                    class="btn btn-primary"
+                >
                     View Courses
                 </a>
 
-                <a href="admission.html"
-                   class="btn btn-success admission-btn">
+
+                <a
+                    href="admission.html"
+                    class="btn btn-success admission-btn"
+                >
                     Apply Online
                 </a>
+
             </div>
 
         </div>
@@ -397,136 +935,253 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
     <div class="container footer-content">
 
+
         <!-- FOOTER BRAND -->
+
         <div class="footer-brand">
-            <img src="logoo.png" alt="College Logo">
+
+            <img
+                src="logoo.png"
+                alt="College Logo"
+            >
+
 
             <h3>
                 Shaheed Darshan Singh
                 Pheruman Memorial College
             </h3>
 
-            <p>For Women</p>
+
+            <p>
+                For Women
+            </p>
+
         </div>
+
 
 
         <!-- FOOTER LINKS -->
+
         <div class="footer-links">
 
-            <h4>Quick Links</h4>
+            <h4>
+                Quick Links
+            </h4>
 
-            <a href="sdspc.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="courses.html">Courses</a>
-            <a href="departments.html">Departments</a>
-            <a href="facilities.html">Facilities</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-            <a href="admission.html">Online Admission</a>
+
+            <a href="sdspc.html">
+                Home
+            </a>
+
+
+            <a href="about.html">
+                About
+            </a>
+
+
+            <a href="courses.html">
+                Courses
+            </a>
+
+
+            <a href="departments.html">
+                Departments
+            </a>
+
+
+            <a href="facilities.html">
+                Facilities
+            </a>
+
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+
+            <a href="admission.html">
+                Online Admission
+            </a>
 
         </div>
 
 
+
         <!-- FOOTER CONTACT -->
+
         <div class="footer-contact">
 
-            <h4>Contact</h4>
+            <h4>
+                Contact
+            </h4>
+
 
             <p>
                 Rayya, District Amritsar,
                 Punjab, India
             </p>
 
-            <p>+91 1853 222403</p>
 
-            <p>sdspmcfwr@gmail.com</p>
+            <p>
+                +91 1853 222403
+            </p>
+
+
+            <p>
+                sdspmcfwr@gmail.com
+            </p>
 
         </div>
 
     </div>
 
 
+
     <!-- FOOTER BOTTOM -->
+
     <div class="footer-bottom">
+
         <p>
             © 2026 Shaheed Darshan Singh
             Pheruman Memorial College for Women.
             All Rights Reserved.
         </p>
+
     </div>
 
 </footer>
 
 
-<!-- ================= SLIDER JAVASCRIPT ================= -->
+
+<!-- =====================================================
+     HERO SLIDER JAVASCRIPT
+===================================================== -->
 
 <script>
+
     let slideIndex = 1;
+
 
     showSlides(slideIndex);
 
 
+
     // Next / Previous
+
     function changeSlide(n) {
+
         showSlides(slideIndex += n);
+
     }
+
 
 
     // Dot Navigation
+
     function currentSlide(n) {
+
         showSlides(slideIndex = n);
+
     }
+
 
 
     // Display Slide
+
     function showSlides(n) {
 
-        let slides = document.querySelectorAll(".hero-slide");
-        let dots = document.querySelectorAll(".dot");
+        let slides =
+            document.querySelectorAll(".hero-slide");
+
+        let dots =
+            document.querySelectorAll(".dot");
+
 
         if (!slides.length) {
+
             return;
+
         }
+
 
         if (n > slides.length) {
+
             slideIndex = 1;
+
         }
+
 
         if (n < 1) {
+
             slideIndex = slides.length;
+
         }
+
 
         slides.forEach(function(slide) {
+
             slide.classList.remove("active");
+
         });
+
 
         dots.forEach(function(dot) {
+
             dot.classList.remove("active");
+
         });
 
-        slides[slideIndex - 1].classList.add("active");
+
+        slides[slideIndex - 1]
+            .classList.add("active");
+
 
         if (dots[slideIndex - 1]) {
-            dots[slideIndex - 1].classList.add("active");
+
+            dots[slideIndex - 1]
+                .classList.add("active");
+
         }
+
     }
 
 
+
     // Auto Slider
+
     setInterval(function() {
+
         changeSlide(1);
+
     }, 5000);
+
 </script>
 
 
-<!-- Bootstrap JavaScript Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- =====================================================
+     BOOTSTRAP JAVASCRIPT
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
 
 </body>
+
 </html>
